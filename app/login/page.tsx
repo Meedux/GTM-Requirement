@@ -7,7 +7,7 @@ const page = () => {
         <div className="flex justify-center items-center bg-white h-screen">
             <div className='flex flex-col justify-center'>
                 <div className="mb-[2rem] w-full text-center">
-                    <span className="text-black font-bold text-9xl text-center">
+                    <span className="text-black font-bold text-9xl text-center font-joseph-sans">
                         Chora
                     </span>
                 </div>
