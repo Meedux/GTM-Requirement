@@ -6,7 +6,7 @@ const AccountData = () => {
       <button className="bg-black mb-1 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
         Sync
       </button>
-      <div className="border border-gray-300 rounded-md shadow-lg card h-[90%] p-3 w-full ">
+      <div className="border border-gray-300 rounded-md shadow-lg card w-full h-[90%] p-3 ">
         <div className="flex justify-between mb-4">
           <span className="font-bold text-black font-joseph-sans">
             Account Info

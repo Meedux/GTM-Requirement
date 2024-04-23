@@ -57,7 +57,7 @@ const Accounts = () => {
           </div>
         )
       }
-      <div className="border border-gray-300 rounded-md shadow-lg w-[110%] card h-[90%] overflow-auto">
+      <div className="border border-gray-300 rounded-md shadow-lg w-[100%] lg:w-[110%] card h-[90%] overflow-auto">
         <table className="w-full">
           <thead>
             <tr className="border-b border-gray-300">

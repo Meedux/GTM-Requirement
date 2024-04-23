@@ -24,7 +24,7 @@ const FolderData = () => {
           </button>
         </div>
       </div>
-      <div className="border border-gray-300 rounded-md shadow-lg card h-[90%] overflow-auto">
+      <div className="border border-gray-300 rounded-md shadow-lg w-full card h-[90%] overflow-auto">
         <table className="w-full">
           <thead>
             <tr className="border-b border-gray-300">
