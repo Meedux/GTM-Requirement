@@ -4,7 +4,7 @@ import Button from './Sidebar/Button'
 const Sidebar = () => {
   return (
     <>
-        <div className="h-screen w-[19rem] flex flex-col justify-center items-center">
+        <div className="h-screen w-[30rem] flex flex-col justify-center items-center">
             <h1 className="text-black font-bold text-8xl text-center font-joseph-sans mb-4">Chora</h1>
 
             <Button name='HOME' url="/portal" />
