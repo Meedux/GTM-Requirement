@@ -1,5 +1,6 @@
 import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
+import AccountTableRow from "./TableRow/AccountTableRow";
 
 const Accounts = () => {
   return (
@@ -50,26 +51,13 @@ const Accounts = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className="mx-4">
-              <td className="px-4 py-2 flex items-center justify-center">
-                <input type="checkbox" />
-              </td>
-              <td className="text-sm  text-black font-joseph-sans">110000</td>
-              <td className="text-sm  text-black font-joseph-sans">
-                Palto Alto, CA
-              </td>
-              <td className="text-sm  text-black font-joseph-sans">PG&E</td>
-              <td className=" text-black font-joseph-sans"></td>
-              <td className="text-sm  text-black font-joseph-sans">02/11/24</td>
-              <td className="">
-                <span className="text-sm bg-green-300 text-green-600 py-1 px-2 rounded">
-                  Mcdonalds
-                </span>
-              </td>
-              <td className="">
-                <FaRegTrashAlt className="text-red-500" />
-              </td>
-            </tr>
+            <AccountTableRow 
+              accountNumber="110001"
+              cityState="San Francisco, CA"
+              utility="PG&E"
+              date="02/11/24"
+              folderName="Mcdonalds"
+            />
           </tbody>
         </table>
       </div>
