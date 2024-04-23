@@ -1,66 +1,69 @@
 import React from "react";
+import QueueFormInput from "./Utils/QueueFormInput";
 
 const QueueFormCard = () => {
   return (
     <div className="">
-      <div className="border border-gray-300 rounded-md shadow-lg card h-[90%] p-3 w-full ">
+      <div className="border border-gray-300 rounded-md shadow-lg card h-[100%] p-3 w-full ">
         <div className="grid grid-cols-2 gap-4">
           <div className="flex flex-col">
-            <input
-              type="text"
-              className="p-2 text-black rounded-md w-[100%] h-[3rem] bg-[#E7F1FE] mb-[1rem]"
+            <QueueFormInput
               placeholder="First Name"
+              className="font-joseph-sans"
             />
 
-            <input
-              type="text"
-              className="p-2 text-black rounded-md w-[100%] h-[3rem] bg-[#E7F1FE] mb-[1rem]"
-              placeholder="Email"
-            />
+            <QueueFormInput placeholder="Email" className="font-joseph-sans" />
 
             <div className="mb-7">
-              <input
-                type="text"
-                className="p-2 text-black rounded-md w-[45%] mr-2 h-[3rem] bg-[#E7F1FE] mb-[1rem]"
+              <QueueFormInput
                 placeholder="City (Optional)"
+                width="w-[45%]"
+                className="mr-3 font-joseph-sans"
               />
 
-              <input
-                type="text"
-                className="p-2 text-black rounded-md w-1/2 h-[3rem] bg-[#E7F1FE] mb-[1rem]"
+              <QueueFormInput
                 placeholder="State (Optional)"
+                width="w-1/2"
+                className="font-joseph-sans"
               />
             </div>
 
-            <input
-              type="text"
-              className="p-2 text-black rounded-md w-[100%] h-[3rem] bg-[#E7F1FE] mb-[1rem]"
+            <QueueFormInput
               placeholder="File Name"
+              className="font-joseph-sans"
             />
           </div>
           <div className="flex flex-col">
-            <input
-              type="text"
-              className="p-2 text-black rounded-md w-[100%] h-[3rem] bg-[#E7F1FE] mb-[1rem]"
+            <QueueFormInput
               placeholder="Last Name"
+              className="font-joseph-sans"
             />
 
-            <input
-              type="text"
-              className="p-2 text-black rounded-md w-[100%] h-[3rem] bg-[#E7F1FE] mb-[1rem]"
+            <QueueFormInput
               placeholder="Utility Provider (Optional)"
+              className="font-joseph-sans"
             />
 
-            <input
-              type="text"
-              className="p-2 text-black rounded-md w-[100%] h-[3rem] bg-[#E7F1FE] mb-[3rem]"
+            <QueueFormInput
               placeholder="Zip Code (Optional)"
+              className="font-joseph-sans mb-[3rem]"
             />
 
             <div className="flex items-center">
-                <button className="bg-black px-4 py-2 rounded-md shadow-md">Upload</button>
+              <button className="bg-black px-4 py-1 rounded-md mr-2 shadow-md font-joseph-sans">
+                Upload
+              </button>
+              <p className="text-[#006FEE] cursor-pointer font-joseph-sans">
+                Format instructions
+              </p>
             </div>
           </div>
+        </div>
+
+        <div className="flex justify-end ">
+          <button className="bg-black px-4 py-2 rounded-md shadow-md font-joseph-sans">
+            Add to Queue
+          </button>
         </div>
       </div>
     </div>
