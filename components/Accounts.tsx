@@ -1,15 +1,40 @@
+"use client";
+
 import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import AccountTableRow from "./TableRow/AccountTableRow";
+import { usePathname } from 'next/navigation'
 
 const Accounts = () => {
+  const url = usePathname();
+  console.log(url)
   return (
     <div className="">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="mb-2 md:mb-0">
-          <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
-            Move to Project
-          </button>
+          {
+            url === "/portal" && (
+              <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+                Move to Project
+              </button>
+            )
+          }
+          {
+            url === "/portal/settings" && (
+              <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+                Select Billing Period
+              </button>
+            )
+          }
+          {
+            url === "/portal/retrieval" && (
+              <div className="flex jusitify-end">
+                <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+                  Delete
+                </button>
+              </div>
+            )
+          }
         </div>
 
         <div className="flex">
