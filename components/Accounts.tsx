@@ -49,6 +49,14 @@ const Accounts = () => {
           </button>
         </div>
       </div>
+      {
+        url === "/portal/retrieval" && (
+          <div className="flex justify-between mt-3">
+            <span className="font-bold text-black font-joseph-sans">Account Retrievals</span>
+            <span className="font-bold text-black font-joseph-sans">Queue Count: 1</span>
+          </div>
+        )
+      }
       <div className="border border-gray-300 rounded-md shadow-lg w-[110%] card h-[90%] overflow-auto">
         <table className="w-full">
           <thead>
