@@ -43,7 +43,9 @@ const Accounts = () => {
               <th className="text-start text-black text-xs font-bold ">
                 Utility
               </th>
-              <th className=""></th>
+              <th className="text-start text-black text-xs font-bold ">
+                Sync Date
+              </th>
               <th className="text-start text-black text-xs font-bold ">
                 Folder
               </th>
@@ -51,7 +53,7 @@ const Accounts = () => {
             </tr>
           </thead>
           <tbody>
-            <AccountTableRow 
+            <AccountTableRow
               accountNumber="110001"
               cityState="San Francisco, CA"
               utility="PG&E"

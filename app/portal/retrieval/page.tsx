@@ -13,8 +13,7 @@ const page = () => {
             {/* Account Information */}
             <AccountData />
 
-            {/* Second Row */}
-            {/* <FolderData /> */}
+            {/* Queue Form */}
             <QueueFormCard />
           </div>
           <Accounts />
