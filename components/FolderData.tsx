@@ -1,5 +1,6 @@
 import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
+import FolderTableRow from "./TableRow/FolderTableRow";
 
 const FolderData = () => {
   return (
@@ -40,20 +41,10 @@ const FolderData = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td className="px-4 py-2 flex justify-center items-center h-full">
-                <input type="checkbox" />
-              </td>
-              <td className="px-4 py-2 font-bold text-black font-joseph-sans text-sm">
-                Dummy Data 1
-              </td>
-              <td className="px-4 py-2 font-bold text-black font-joseph-sans text-sm">
-                2023-04-22
-              </td>
-              <td className="">
-                <FaRegTrashAlt className="text-red-500" />
-              </td>
-            </tr>
+            <FolderTableRow
+                folderName="Dummy Data 2"
+                date="2023-04-22"
+            />
           </tbody>
         </table>
       </div>
