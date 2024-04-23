@@ -3,60 +3,62 @@
 import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import AccountTableRow from "./TableRow/AccountTableRow";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
 
 const Accounts = () => {
   const url = usePathname();
-  console.log(url)
+  console.log(url);
   return (
-    <div className="mt-7 md:mt-2">
-      <div className="flex flex-col md:flex-row justify-between items-center">
-        <div className="mb-2 md:mb-0">
-          {
-            url === "/home" && (
+    <div className="mt-7 md:mt-0">
+      <div className="flex flex-row justify-between items-center">
+        <div className="">
+          {url === "/home" && (
+            <div className="flex items-center">
               <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
                 Move to Project
               </button>
-            )
-          }
-          {
-            url === "/settings" && (
+            </div>
+          )}
+          {url === "/settings" && (
+            <div className="flex items-center">
               <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
                 Select Billing Period
               </button>
-            )
-          }
-          {
-            url === "/retrieval" && (
+            </div>
+          )}
+          {url === "/retrieval" && (
+            <div className="flex items-center">
               <div className="flex jusitify-end">
                 <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
                   Delete
                 </button>
               </div>
-            )
-          }
+            </div>
+          )}
         </div>
 
         <div className="flex">
-          <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+          <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs md:text-base">
             Sync
           </button>
-          <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+          <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs md:text-base">
             Download
           </button>
-          <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+          <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs md:text-base">
             Delete
           </button>
         </div>
       </div>
-      {
-        url === "/portal/retrieval" && (
-          <div className="flex justify-between mt-3">
-            <span className="font-bold text-black font-joseph-sans">Account Retrievals</span>
-            <span className="font-bold text-black font-joseph-sans">Queue Count: 1</span>
-          </div>
-        )
-      }
+      {url === "/portal/retrieval" && (
+        <div className="flex justify-between mt-3">
+          <span className="font-bold text-black font-joseph-sans">
+            Account Retrievals
+          </span>
+          <span className="font-bold text-black font-joseph-sans">
+            Queue Count: 1
+          </span>
+        </div>
+      )}
       <div className="border border-gray-300 rounded-md shadow-lg w-[100%] lg:w-[110%] card h-[90%] overflow-auto">
         <table className="w-full">
           <thead>

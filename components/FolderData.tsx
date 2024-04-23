@@ -5,8 +5,8 @@ import FolderTableRow from "./TableRow/FolderTableRow";
 const FolderData = () => {
   return (
     <div className="">
-      <div className="flex flex-col md:flex-row justify-between items-center">
-        <div className="mb-2 md:mb-0">
+      <div className="flex flex-row justify-between items-center">
+        <div className="">
           <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
             Create Project
           </button>
