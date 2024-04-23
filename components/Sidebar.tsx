@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Button from "./Sidebar/Button";
 import { useMediaQuery } from "react-responsive";
+import { RiCloseFill } from "react-icons/ri";
+
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,21 +66,11 @@ const Sidebar = () => {
         className="fixed top-0 left-0 block md:hidden h-screen w-[20rem] bg-white z-50 transform transition-transform duration-300 ease-in-out"
         style={{ transform: isOpen ? "translateX(0)" : "translateX(-100%)" }}
       >
-        <button className="fixed top-4 right-4 text-3xl" onClick={handleToggle}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-black"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+        <button className="fixed top-4 left-3 text-3xl" onClick={handleToggle}>
+          <RiCloseFill 
+            className="text-black"
+            size={30}
+          />
         </button>
 
         <div className="h-screen w-full flex flex-col justify-center items-center">
