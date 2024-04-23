@@ -33,3 +33,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.container {
+  @apply mx-auto max-w-4xl px-4;
+}
