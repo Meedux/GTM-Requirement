@@ -23,13 +23,13 @@ const Sidebar = () => {
     <div className={`h-screen w-[30rem] flex-col justify-center items-center md:flex hidden`}>
       <h1 className="text-black font-bold text-8xl text-center font-joseph-sans mb-4">Chora</h1>
 
-      <Button name='HOME' url="/portal" />
+      <Button name='HOME' url="/home" />
 
-      <Button name='RETRIEVAL' url="/portal/retrieval" />
+      <Button name='RETRIEVAL' url="/retrieval" />
 
-      <Button name='ANALYSIS' url="/portal/analysis" />
+      <Button name='ANALYSIS' url="/analysis" />
 
-      <Button name='SETTINGS' url="/portal/settings" />
+      <Button name='SETTINGS' url="/settings" />
     </div>
 
     <div className={`fixed top-0 left-0 ${isOpen ? "block" : "hidden" } h-screen w-screen bg-black bg-opacity-50 z-50`} onClick={handleToggle}></div>
@@ -46,11 +46,11 @@ const Sidebar = () => {
 
         <Button name='HOME' url="/portal" />
 
-        <Button name='RETRIEVAL' url="/portal/retrieval" />
+        <Button name='RETRIEVAL' url="/retrieval" />
 
-        <Button name='ANALYSIS' url="/portal/analysis" />
+        <Button name='ANALYSIS' url="/analysis" />
 
-        <Button name='SETTINGS' url="/portal/settings" />
+        <Button name='SETTINGS' url="/settings" />
       </div>
     </div>
     </>

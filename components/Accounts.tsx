@@ -13,21 +13,21 @@ const Accounts = () => {
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="mb-2 md:mb-0">
           {
-            url === "/portal" && (
+            url === "/home" && (
               <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
                 Move to Project
               </button>
             )
           }
           {
-            url === "/portal/settings" && (
+            url === "/settings" && (
               <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
                 Select Billing Period
               </button>
             )
           }
           {
-            url === "/portal/retrieval" && (
+            url === "/retrieval" && (
               <div className="flex jusitify-end">
                 <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
                   Delete
