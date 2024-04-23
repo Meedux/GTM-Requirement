@@ -13,29 +13,33 @@ const Login = ({ setFormState }: {
   const [errorPassword, setErrorPassword] = useState<boolean>(false);
   
   const onLogin = () => {
+    if(email === "" && password === ""){
+      setErrorEmail(true);
+      setErrorPassword(true);
+      setTimeout(() => {
+        setErrorEmail(false);
+        setErrorPassword(false);
+      }, 3000);
+      return;
+    }
+
     if(email === ""){
       setErrorEmail(true);
       setTimeout(() => {
         setErrorEmail(false);
       }, 3000);
       return;
-    }else if(password === ""){
+    }
+
+    if(password === ""){
       setErrorPassword(true);
       setTimeout(() => {
         setErrorPassword(false);
       }, 3000);
       return;
     }
-    else if(email === "" && password === ""){
-      setErrorEmail(true);
-      setErrorPassword(true);
-      setTimeout(() => {
-        setErrorEmail(false);
-        setErrorPassword(false);
-      }, 3000);
-      return;
-    }
-    router.push('/portal');
+    
+    router.push('/home');
   }
 
   return (
@@ -48,7 +52,7 @@ const Login = ({ setFormState }: {
             }
             <input
               type="text"
-              className="p-2 rounded-md w-[20rem] h-[3rem] bg-[#E7F1FE] mb-[1rem]"
+              className="p-2 rounded-md w-[20rem] h-[3rem] text-black bg-[#E7F1FE] mb-[1rem]"
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
@@ -61,7 +65,7 @@ const Login = ({ setFormState }: {
             }
             <input
               type="password"
-              className="p-2 rounded-md w-[20rem] h-[3rem] bg-[#E7F1FE] mb-3"
+              className="p-2 rounded-md w-[20rem] text-black h-[3rem] bg-[#E7F1FE] mb-3"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}

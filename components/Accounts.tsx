@@ -9,7 +9,7 @@ const Accounts = () => {
   const url = usePathname();
   console.log(url)
   return (
-    <div className="">
+    <div className="mt-7">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="mb-2 md:mb-0">
           {

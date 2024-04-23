@@ -44,7 +44,7 @@ const Sidebar = () => {
       <div className="h-screen w-[30rem] flex flex-col justify-center items-center">
         <h1 className="text-black font-bold text-5xl text-center font-joseph-sans mb-4">Chora</h1>
 
-        <Button name='HOME' url="/portal" />
+        <Button name='HOME' url="/home" />
 
         <Button name='RETRIEVAL' url="/retrieval" />
 
