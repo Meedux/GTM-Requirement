@@ -17,7 +17,7 @@ const QueueFormCard = () => {
             <div className="mb-7">
               <QueueFormInput
                 placeholder="City (Optional)"
-                width="w-[45%]"
+                width="w-[40%]"
                 className="mr-3 font-joseph-sans"
               />
 
@@ -53,7 +53,7 @@ const QueueFormCard = () => {
               <button className="bg-black px-4 py-1 rounded-md mr-2 shadow-md font-joseph-sans">
                 Upload
               </button>
-              <p className="text-[#006FEE] cursor-pointer font-joseph-sans">
+              <p className="text-[#006FEE] text-xs cursor-pointer font-joseph-sans">
                 Format instructions
               </p>
             </div>
