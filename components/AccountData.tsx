@@ -3,7 +3,7 @@ import React from "react";
 const AccountData = () => {
   return (
     <div className="">
-      <button className="bg-black mb-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+      <button className="bg-black mb-1 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
         Sync
       </button>
       <div className="border border-gray-300 rounded-md shadow-lg card h-[90%] p-3 w-full ">

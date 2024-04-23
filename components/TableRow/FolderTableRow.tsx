@@ -14,8 +14,8 @@ const FolderTableRow = ({
         <td className="px-4 py-2 flex justify-center items-center h-full">
           <input type="checkbox" />
         </td>
-        <td className="px-4 py-2 font-bold text-black font-joseph-sans text-sm">
-          <div className="flex">
+        <td className="px-4 py-2 font-bold text-black font-joseph-sans text-sm ">
+          <div className="flex cursor-pointer">
             <FaRegFolder className="text-black mr-2" />
             {folderName}
           </div>
