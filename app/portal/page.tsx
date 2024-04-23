@@ -2,7 +2,6 @@ import AccountData from "@/components/AccountData";
 import Accounts from "@/components/Accounts";
 import FolderData from "@/components/FolderData";
 import React from "react";
-import { FaRegTrashAlt } from "react-icons/fa";
 
 const page = () => {
   return (
