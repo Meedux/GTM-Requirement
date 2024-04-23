@@ -64,7 +64,7 @@ const Sidebar = () => {
         className="fixed top-0 left-0 block md:hidden h-screen w-[20rem] bg-white z-50 transform transition-transform duration-300 ease-in-out"
         style={{ transform: isOpen ? "translateX(0)" : "translateX(-100%)" }}
       >
-        <button className="fixed top-4 left-4 text-3xl" onClick={handleToggle}>
+        <button className="fixed top-4 right-4 text-3xl" onClick={handleToggle}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6 text-black"
