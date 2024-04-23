@@ -49,7 +49,6 @@ const Accounts = () => {
               <th className="text-start text-black text-xs font-bold ">
                 Folder
               </th>
-              <th className=""></th>
             </tr>
           </thead>
           <tbody>
