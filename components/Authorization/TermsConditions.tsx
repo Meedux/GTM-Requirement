@@ -11,7 +11,7 @@ return (
         <h1 className="text-white font-joseph-sans text-8xl mb-9 font-bold">Chora</h1>
 
         {/* Terms and Conditions Card with white Background */}
-        <div className="bg-white p-2 w-[50%] h-[70%] flex flex-col justify-center items-center rounded-md shadow-2xl">
+        <div className="bg-white p-2 md:w-[50%] h-[70%] flex flex-col justify-center items-center rounded-md shadow-2xl">
             <Image src={'/PG&E.svg'} width={100} height={100} alt='PG&E Logo' className='mt-5 mb-9'/>
             <h1 className="text-black font-joseph-sans text-center text-4xl mb-4 font-bold">Terms and Conditions</h1>
             

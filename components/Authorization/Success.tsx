@@ -16,11 +16,11 @@ const Success = () => {
       <h1 className="text-white font-joseph-sans text-3xl mb-5 font-bold">
         Success!
       </h1>
-      <p className="text-white font-joseph-sans text-3xl mb-5 font-light text-end w-[40%]">
+      <p className="text-white font-joseph-sans text-3xl mb-5 font-light text-end md:w-[40%]">
         Your data was sucesfully sent to your Energy Solution Provider.
       </p>
 
-      <p className="text-white font-joseph-sans text-lg mb-5 font-light text-end w-[40%]">
+      <p className="text-white font-joseph-sans text-lg mb-5 font-light text-end md:w-[40%]">
         Redirecting back to Login Page...
       </p>
     </div>
