@@ -26,7 +26,7 @@ const SignInForm = ({
             />
             <button className="bg-black text-white w-[80%] h-[3rem] rounded-md" onClick={e => setFormState("terms")}>Sign In</button>
             <div className="flex flex-col items-center mt-5">
-                <span className="text-black font-joseph-sans text-sm">Don't have an account?</span>
+                <span className="text-black font-joseph-sans text-sm">{"Don't"} have an account?</span>
                 <span className="text-black font-joseph-sans text-sm">Sign Up</span>
             </div>
         </div>
