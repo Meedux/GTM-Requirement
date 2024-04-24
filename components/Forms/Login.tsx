@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const Login = ({ setFormState }: {
     setFormState: React.Dispatch<React.SetStateAction<string>>
@@ -82,6 +83,9 @@ const Login = ({ setFormState }: {
             >
               Forgot Password?
             </p>
+            <Link href="/authorization" legacyBehavior>
+              <a className="text-[#006FEE] font-joseph-sans">Authorization Portal</a>
+            </Link>
           </div>
     </>
   )
