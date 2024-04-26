@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { AuthenticationDetails, CognitoUser } from 'amazon-cognito-identity-js';
+import { userPool } from '@/util/UserPool';
 
 const Login = ({ setFormState }: {
     setFormState: React.Dispatch<React.SetStateAction<string>>
@@ -12,6 +14,8 @@ const Login = ({ setFormState }: {
   
   const [errorEmail, setErrorEmail] = useState<boolean>(false);
   const [errorPassword, setErrorPassword] = useState<boolean>(false);
+
+  const [error, setError] = useState<string>("");
   
   const onLogin = () => {
     if(email === "" && password === ""){
@@ -39,8 +43,37 @@ const Login = ({ setFormState }: {
       }, 3000);
       return;
     }
-    
-    router.push('/home');
+
+    const authenticationData = {
+      Username: email,
+      Password: password
+    }
+
+    const authenticationDetails = new AuthenticationDetails(authenticationData);
+
+    const userData = {
+      Username: email,
+      Pool: userPool
+    }
+
+    const cognitoUser = new CognitoUser(userData);
+
+    cognitoUser.authenticateUser(authenticationDetails, {
+      onSuccess: (result) => {
+        console.log('onSuccess:', result);
+        router.push('/home');
+      },
+      onFailure: (err) => {
+        console.error('onFailure:', err);
+        setError(err.message);
+        setTimeout(() => {
+          setError("");
+        }, 3000);
+      },
+      newPasswordRequired: (userAttributes, requiredAttributes) => {
+        console.log('newPasswordRequired:', userAttributes, requiredAttributes);
+      }
+    });
   }
 
   return (
@@ -49,6 +82,11 @@ const Login = ({ setFormState }: {
             {
               errorEmail && (
                 <p className="text-red-500 font-joseph-sans">Email is required</p>
+              )
+            }
+            {
+              error && (
+                <p className="text-red-500 font-joseph-sans">{error}</p>
               )
             }
             <input
