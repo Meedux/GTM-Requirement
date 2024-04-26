@@ -16,6 +16,7 @@ const Authorization = () => {
       {formState === "signin" && <SignInForm setFormState={setFormState} />}
       {formState === "terms" && <TermsConditions setFormState={setFormState} />}
       {formState === "success" && <Success />}
+
     </>
   );
 };

@@ -84,7 +84,7 @@ const Login = ({ setFormState }: {
               Forgot Password?
             </p>
             <Link href="/authorization" legacyBehavior>
-              <a className="text-[#006FEE] font-joseph-sans">Authorization Portal</a>
+              <a className="text-[#006FEE] font-joseph-sans">Create Account</a>
             </Link>
           </div>
     </>
