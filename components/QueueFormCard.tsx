@@ -50,7 +50,7 @@ const QueueFormCard = () => {
             />
 
             <div className="flex items-center">
-              <button className="bg-black px-4 py-1 rounded-md mr-2 shadow-md font-joseph-sans">
+              <button className="bg-black px-2 py-1 rounded-md mr-2 shadow-md font-joseph-sans">
                 Upload
               </button>
               <p className="text-[#006FEE] text-xs cursor-pointer font-joseph-sans">
@@ -61,7 +61,7 @@ const QueueFormCard = () => {
         </div>
 
         <div className="flex justify-end ">
-          <button className="bg-black px-4 py-2 rounded-md shadow-md font-joseph-sans">
+          <button className="bg-black px-2 py-1 rounded-md shadow-md font-joseph-sans">
             Add to Queue
           </button>
         </div>

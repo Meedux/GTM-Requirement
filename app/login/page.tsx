@@ -1,4 +1,5 @@
 import Form from '@/components/Form'
+import Image from 'next/image'
 import { Container } from 'postcss'
 import React from 'react'
 
@@ -7,9 +8,7 @@ const page = () => {
         <div className="flex justify-center items-center bg-white h-screen">
             <div className='flex flex-col justify-center'>
                 <div className="mb-[2rem] w-full text-center">
-                    <span className="text-black font-bold text-9xl text-center font-joseph-sans">
-                        Chora
-                    </span>
+                    <Image src={'/CHORA.svg'} width={400} height={200} alt='Chora Logo' />
                 </div>
 
                 <Form />

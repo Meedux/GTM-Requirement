@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Button from "./Sidebar/Button";
 import { useMediaQuery } from "react-responsive";
 import { RiCloseFill } from "react-icons/ri";
+import Image from "next/image";
 
 
 const Sidebar = () => {
@@ -42,9 +43,7 @@ const Sidebar = () => {
       <div
         className={`h-screen w-[30rem] flex-col justify-center items-center md:flex hidden`}
       >
-        <h1 className="text-black font-bold text-8xl text-center font-joseph-sans mb-4">
-          Chora
-        </h1>
+        <Image src={'/CHORA.svg'} className="mb-7" width={300} height={200} alt='Chora Logo' />
 
         <Button name="HOME" url="/home" />
 

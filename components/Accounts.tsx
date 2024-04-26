@@ -14,7 +14,7 @@ const Accounts = () => {
         <div className="">
           {url === "/home" && (
             <div className="flex items-center">
-              <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+              <button className="bg-black mb-1 px-1 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
                 Move to Project
               </button>
             </div>
