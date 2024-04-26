@@ -1,10 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { useRouter } from 'next/navigation';
+import { AuthContext } from '@/util/AuthContext';
 
 const Success = () => {
     const router = useRouter();
+    const { set } = useContext(AuthContext);
     useEffect(() => {
         setTimeout(() => {
+            set('');
             router.push('/login');
         }, 3000);
     }, []);

@@ -1,13 +1,14 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useContext } from 'react'
 import { userPool } from '@/util/UserPool'
+import { AuthContext } from '@/util/AuthContext'
 
 const SignInForm = ({
     setFormState
 }: {
     setFormState: React.Dispatch<React.SetStateAction<string>>
 }) => {
-
+    const { set } = useContext(AuthContext)
     const [email, setEmail] = React.useState<string>('')
     const [password, setPassword] = React.useState<string>('')
 
@@ -50,7 +51,8 @@ const SignInForm = ({
                 }, 5000)
             } else if (data) {
                 console.log(data)
-                setFormState("terms")
+                set(email)
+                setFormState("verify")
             }
         })
     }
