@@ -27,6 +27,10 @@ const page = () => {
               tension: 0.1
             }
           ]
+        },
+        options: {
+          responsive: true,
+          resizeDelay: 200,
         }
       });
     }
@@ -42,11 +46,10 @@ const page = () => {
   return (
     <div className="w-full h-screen overflow-scroll px-[5%]">
       <div className="h-full py-[5%] grid grid-row-2 gap-4">
-          <div className="h-full w-full">
-            {/* Display Line chart here */}
+          <div className="relative md:block flex justify-center items-center md:h-[100%] md:w-[100%] h-[50vh] w-[80vw]">
             <canvas id='chart'></canvas>
           </div>
-          <div className="h-full grid grid-cols-3 gap-4 mb-7">
+          <div className="h-full grid grid-cols-1 md:grid-cols-3 gap-4 mb-7">
             <AccountCardOne />
             <AccountCardTwo />
             <AccountCardThree />

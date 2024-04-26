@@ -1,4 +1,5 @@
 import React from 'react'
+import AccountCardRow from '../TableRow/AccountCardRow'
 
 const AccountCardOne = () => {
   return (
@@ -7,6 +8,7 @@ const AccountCardOne = () => {
         <table className="w-full">
           <thead>
             <tr className="border-b border-gray-300">
+              <th></th>
               <th className=" text-xs text-black font-bold font-joseph-sans">
                 Account #
               </th>
@@ -22,7 +24,10 @@ const AccountCardOne = () => {
             </tr>
           </thead>
           <tbody>
-
+            <AccountCardRow />
+            <AccountCardRow />
+            <AccountCardRow />
+            <AccountCardRow />
           </tbody>
         </table>
       </div>

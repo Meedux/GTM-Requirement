@@ -1,4 +1,5 @@
 import React from 'react'
+import AccountCardRow from '../TableRow/AccountCardRow'
 
 const AccountCardTwo = () => {
   return (
@@ -22,7 +23,10 @@ const AccountCardTwo = () => {
             </tr>
           </thead>
           <tbody>
-
+            <AccountCardRow />
+            <AccountCardRow />
+            <AccountCardRow />
+            <AccountCardRow />
           </tbody>
         </table>
       </div>
