@@ -55,6 +55,7 @@ const QueueFormCard = () => {
               </button>
               <p className="text-[#006FEE] text-xs cursor-pointer font-joseph-sans">
                 Format instructions
+                
               </p>
             </div>
           </div>

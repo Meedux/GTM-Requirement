@@ -7,10 +7,9 @@ import { usePathname } from "next/navigation";
 
 const Accounts = () => {
   const url = usePathname();
-  console.log(url);
   return (
     <div className="mt-7 md:mt-0">
-      <div className="flex flex-row justify-between items-center">
+      <div className={`flex flex-row ${url === '/retrieval' ? "justify-end" : "justify-between"} items-center w-[100%] lg:w-[110%]`}>
         <div className="">
           {url === "/home" && (
             <div className="flex items-center">
@@ -27,9 +26,9 @@ const Accounts = () => {
             </div>
           )}
           {url === "/retrieval" && (
-            <div className="flex items-center">
-              <div className="flex jusitify-end">
-                <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+            <div className="flex w-full">
+              <div className="flex justify-end">
+                <button className="bg-black mb-1 px-4 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
                   Delete
                 </button>
               </div>
@@ -37,7 +36,7 @@ const Accounts = () => {
           )}
         </div>
 
-        <div className="flex">
+        <div className={`${url === '/retrieval' ? "hidden" : "flex"}`}>
           <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs md:text-base">
             Sync
           </button>
@@ -49,8 +48,8 @@ const Accounts = () => {
           </button>
         </div>
       </div>
-      {url === "/portal/retrieval" && (
-        <div className="flex justify-between mt-3">
+      {url === "/retrieval" && (
+        <div className="flex justify-between mt-1">
           <span className="font-bold text-black font-joseph-sans">
             Account Retrievals
           </span>
@@ -97,6 +96,16 @@ const Accounts = () => {
           </tbody>
         </table>
       </div>
+
+      {url === "/retrieval" && (
+        <div className="text-center w-[100%] lg:w-[110%] mt-4">
+          <button className="bg-[#006FEE] mb-1 px-4 py-2 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs md:text-base">
+            Retrieve
+          </button>
+        </div>
+      )}
+
+      
     </div>
   );
 };

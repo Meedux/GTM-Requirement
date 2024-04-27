@@ -39,19 +39,20 @@ const Sidebar = () => {
           />
         </svg>
       </button> */}
+      <div className="h-screen flex justify-center items-center">
+        <div
+          className={`h-[80%] w-[20rem] flex-col justify-between items-center md:flex hidden`}
+        >
+          <Image src={'/CHORA.svg'} className="mb-7" width={200} height={200} alt='Chora Logo' />
 
-      <div
-        className={`h-screen w-[30rem] flex-col justify-center items-center md:flex hidden`}
-      >
-        <Image src={'/CHORA.svg'} className="mb-7" width={300} height={200} alt='Chora Logo' />
+          <Button name="HOME" url="/home" />
 
-        <Button name="HOME" url="/home" />
+          <Button name="RETRIEVAL" url="/retrieval" />
 
-        <Button name="RETRIEVAL" url="/retrieval" />
+          <Button name="ANALYSIS" url="/analysis" />
 
-        <Button name="ANALYSIS" url="/analysis" />
-
-        <Button name="SETTINGS" url="/settings" />
+          <Button name="SETTINGS" url="/settings" />
+        </div>
       </div>
 
       <div
@@ -72,18 +73,20 @@ const Sidebar = () => {
           />
         </button>
 
-        <div className="h-screen w-full flex flex-col justify-center items-center">
-          <h1 className="text-black font-bold text-5xl text-center font-joseph-sans mb-4">
-            Chora
-          </h1>
+        <div className="h-screen flex justify-center items-center">
+          <div
+            className={`h-[80%] w-[20rem] flex-col justify-between items-center md:flex hidden`}
+          >
+            <Image src={'/CHORA.svg'} className="mb-7" width={200} height={200} alt='Chora Logo' />
 
-          <Button name="HOME" url="/home" />
+            <Button name="HOME" url="/home" />
 
-          <Button name="RETRIEVAL" url="/retrieval" />
+            <Button name="RETRIEVAL" url="/retrieval" />
 
-          <Button name="ANALYSIS" url="/analysis" />
+            <Button name="ANALYSIS" url="/analysis" />
 
-          <Button name="SETTINGS" url="/settings" />
+            <Button name="SETTINGS" url="/settings" />
+          </div>
         </div>
       </div>
     </>

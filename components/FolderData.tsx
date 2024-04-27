@@ -1,8 +1,11 @@
+"use client";
 import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import FolderTableRow from "./TableRow/FolderTableRow";
+import { usePathname } from "next/navigation";
 
 const FolderData = () => {
+  const url = usePathname();
   return (
     <div className="">
       <div className="flex flex-row justify-between items-center">
@@ -12,17 +15,29 @@ const FolderData = () => {
           </button>
         </div>
 
-        <div className="flex">
-          <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
-            Sync
-          </button>
-          <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
-            Download
-          </button>
-          <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
-            Delete
-          </button>
-        </div>
+        {
+          url === '/retrieval' && (
+            <span className="font-joseph-sans underline text-black">
+              {"Select Account Location(s): "}
+            </span>
+          )
+        }
+
+        {
+          url === '/home' && (
+            <div className="flex">
+              <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+                Sync
+              </button>
+              <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+                Download
+              </button>
+              <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+                Delete
+              </button>
+            </div>
+          )
+        }
       </div>
       <div className="border border-gray-300 rounded-md shadow-lg w-full card h-[96%] md:h-[93%] overflow-auto">
         <table className="w-full">

@@ -11,7 +11,7 @@ const page = () => {
         <div className="h-full py-[5%] grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-4">
           <div className="h-full grid grid-rows-2 gap-4">
             {/* Account Information */}
-            <AccountData />
+            <FolderData />
 
             {/* Queue Form */}
             <QueueFormCard />
