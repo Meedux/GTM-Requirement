@@ -39,9 +39,9 @@ const Sidebar = () => {
           />
         </svg>
       </button> */}
-      <div className="h-screen flex justify-center items-center">
+      <div className="h-screen md:flex hidden justify-center items-center">
         <div
-          className={`h-[80%] w-[20rem] flex-col justify-between items-center md:flex hidden`}
+          className={`h-[80%] w-[20rem] flex flex-col justify-between items-center`}
         >
           <Image src={'/CHORA.svg'} className="mb-7" width={200} height={200} alt='Chora Logo' />
 
@@ -73,9 +73,9 @@ const Sidebar = () => {
           />
         </button>
 
-        <div className="h-screen flex justify-center items-center">
+        <div className="h-screen md:hidden flex justify-center items-center">
           <div
-            className={`h-[80%] w-[20rem] flex-col justify-between items-center md:flex hidden`}
+            className={`h-[80%] w-[20rem] flex-col justify-between items-center flex`}
           >
             <Image src={'/CHORA.svg'} className="mb-7" width={200} height={200} alt='Chora Logo' />
 
