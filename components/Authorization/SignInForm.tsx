@@ -2,13 +2,13 @@ import Image from 'next/image'
 import React, { useContext } from 'react'
 import { userPool } from '@/util/UserPool'
 import { AuthContext } from '@/util/AuthContext'
+import { AuthenticationDetails, CognitoUser } from 'amazon-cognito-identity-js'
 
 const SignInForm = ({
     setFormState
 }: {
     setFormState: React.Dispatch<React.SetStateAction<string>>
 }) => {
-    const { set } = useContext(AuthContext)
     const [email, setEmail] = React.useState<string>('')
     const [password, setPassword] = React.useState<string>('')
 
@@ -17,53 +17,46 @@ const SignInForm = ({
 
     const handleSignIn = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-
-        // Validate username
-        if (email.length < 1 || !/[\p{L}\p{M}\p{S}\p{N}\p{P}]+/u.test(email)) {
-            setError('Invalid username');
-            setIsError(true)
-            setTimeout(() => {
-                setIsError(false)
-                setError('')
-            }, 5000)
-            return;
-        }
-  
-        // Validate password
-        if (!/^[\S]+.*[\S]+$/u.test(password)) {
-            setError('Invalid password');
-            setIsError(true)
-            setTimeout(() => {
-                setIsError(false)
-                setError('')
-            }, 5000)
-            return;
-        }
-
-        userPool.signUp(email, password, [], [], (err, data) => {
-            if (err) {
-                console.error(err)
-                setIsError(true)
-                setError(err.message)
-                setTimeout(() => {
-                    setIsError(false)
-                    setError('')
-                }, 5000)
-            } else if (data) {
-                console.log(data)
-                set(email)
-                setFormState("verify")
+      
+          const authenticationData = {
+            Username: email,
+            Password: password
+          }
+      
+          const authenticationDetails = new AuthenticationDetails(authenticationData);
+      
+          const userData = {
+            Username: email,
+            Pool: userPool
+          }
+      
+          const cognitoUser = new CognitoUser(userData);
+      
+          cognitoUser.authenticateUser(authenticationDetails, {
+            onSuccess: (result) => {
+              console.log('onSuccess:', result);
+              setFormState('terms');
+            },
+            onFailure: (err) => {
+              console.error('onFailure:', err);
+              setError(err.message);
+              setTimeout(() => {
+                setError("");
+              }, 3000);
+            },
+            newPasswordRequired: (userAttributes, requiredAttributes) => {
+              console.log('newPasswordRequired:', userAttributes, requiredAttributes);
             }
-        })
+          });
     }
   return (
     <div className='h-screen mx-[10%] flex flex-col justify-center items-center'>
-        <h1 className="text-white font-joseph-sans text-8xl mb-9 font-bold">Chora</h1>
+        <Image src={'/CHORA.svg'} className="mb-7" width={300} height={200} alt='Chora Logo' />
 
         {/* Sign In Card with white Background */}
         <div className="bg-white p-2 w-[25rem] flex flex-col justify-center items-center rounded-md shadow-2xl">
             <Image src={'/PG&E.svg'} width={100} height={100} alt='PG&E Logo' className='mt-5 mb-9'/>
-            <h1 className="text-black font-joseph-sans text-4xl mb-4 font-bold">Sign In</h1>
+            <h1 className="text-black font-joseph-sans text-4xl mb-4 font-bold">Login Account</h1>
             {
                 isError && (
                     <div className="text-red-500 p-2 font-joseph-sans">
@@ -85,7 +78,7 @@ const SignInForm = ({
                 value={password}
                 onChange={e => setPassword(e.target.value)}
             />
-            <button className="bg-black text-white w-[80%] h-[3rem] rounded-md mb-5" onClick={e => handleSignIn(e)}>Create Account</button>
+            <button className="bg-black text-white w-[80%] h-[3rem] rounded-md mb-5" onClick={e => handleSignIn(e)}>Sign In</button>
         </div>
     </div>
   )

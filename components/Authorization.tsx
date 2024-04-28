@@ -15,7 +15,7 @@ const Authorization = () => {
         <UtilityProvider setFormState={setFormState} />
       )}
       {formState === "signin" && <SignInForm setFormState={setFormState} />}
-      {formState === "verify" && <VerifyEmail setFormState={setFormState} />}
+      {/* {formState === "verify" && <VerifyEmail setFormState={setFormState} />} */}
       {formState === "terms" && <TermsConditions setFormState={setFormState} />}
       {formState === "success" && <Success />}
 
