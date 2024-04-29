@@ -88,7 +88,7 @@ const VerifyEmail = () => {
         className="bg-blue-500 shadow-lg text-white w-[30%] h-[3rem] rounded-md mb-5"
         onClick={(e) => handleVerify(e)}
       >
-        Verify Email
+        VERIFY EMAIL
       </button>
       <span className="text-blue-500 font-joseph-sans cursor-pointer" onClick={e => resendCode(e)}>Resend Verification Link</span>
     </div>

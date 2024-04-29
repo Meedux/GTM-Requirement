@@ -5,15 +5,18 @@ import { userPool } from "@/util/UserPool";
 import { CognitoUserAttribute } from "amazon-cognito-identity-js";
 import React, { useContext } from "react";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const CreateAccount = ({
-  setFormState
+  setFormState,
 }: {
   setFormState: React.Dispatch<React.SetStateAction<string>>;
 }) => {
-  const { set } = useContext(AuthContext)
+  const { set } = useContext(AuthContext);
   const [isError, setIsError] = useState<Boolean>(false);
   const [error, setError] = useState<string>("");
+
+  const router = useRouter();
 
   // set the input states
   const [firstName, setFirstName] = useState<string>("");
@@ -28,7 +31,7 @@ const CreateAccount = ({
   const handleSignIn = (e: any) => {
     e.preventDefault();
 
-    if(email !== confirmEmail) {
+    if (email !== confirmEmail) {
       setIsError(true);
       setError("Emails do not match");
       setTimeout(() => {
@@ -38,7 +41,7 @@ const CreateAccount = ({
       return;
     }
 
-    if(password !== confirmPassword) {
+    if (password !== confirmPassword) {
       setIsError(true);
       setError("Passwords do not match");
       setTimeout(() => {
@@ -81,27 +84,20 @@ const CreateAccount = ({
       companyPositionAttribute,
     ];
 
-    userPool.signUp(
-      email,
-      password,
-      attributes,
-      null as any,
-      (err, data) => {
-        if (err) {
-          setIsError(true);
-          setError(err.message);
-          setTimeout(() => {
-            setIsError(false);
-            setError("");
-          }, 3000);
-          return;
-        }
-        console.log(data);
-        set(email);
-        setFormState("verify");
+    userPool.signUp(email, password, attributes, null as any, (err, data) => {
+      if (err) {
+        setIsError(true);
+        setError(err.message);
+        setTimeout(() => {
+          setIsError(false);
+          setError("");
+        }, 3000);
+        return;
       }
-    );
-   
+      console.log(data);
+      set(email);
+      setFormState("verify");
+    });
   };
   return (
     <div className=" p-2 w-[40rem] flex flex-col justify-center items-center rounded-md">
@@ -179,11 +175,21 @@ const CreateAccount = ({
       </div>
 
       <button
-        className="bg-blue-500 shadow-lg text-white w-[30%] h-[3rem] rounded-md mb-5"
+        className="bg-blue-500 shadow-lg text-white w-[30%] h-[3rem] rounded-md mb-1"
         onClick={(e) => handleSignIn(e)}
       >
-        Create Account
+        CREATE ACCOUNT
       </button>
+
+      <span
+        className="text-blue-500 font-joseph-sans cursor-pointer"
+        onClick={(e) => {
+          e.preventDefault();
+          router.push("/login");
+        }}
+      >
+        Already have an Account?
+      </span>
     </div>
   );
 };
