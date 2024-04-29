@@ -2,6 +2,7 @@ import AccountData from "@/components/AccountData";
 import Accounts from "@/components/Accounts";
 import FolderData from "@/components/FolderData";
 import QueueFormCard from "@/components/QueueFormCard";
+import AccountsTable from "@/components/Retrieval/AccountsTable";
 import React from "react";
 
 const page = () => {
@@ -16,7 +17,7 @@ const page = () => {
             {/* Queue Form */}
             <QueueFormCard />
           </div>
-          <Accounts />
+          <AccountsTable />
         </div>
       </div>
     </>

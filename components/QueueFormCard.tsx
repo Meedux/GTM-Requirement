@@ -4,7 +4,7 @@ import QueueFormInput from "./Utils/QueueFormInput";
 const QueueFormCard = () => {
   return (
     <div className="">
-      <div className="border border-gray-300 rounded-md shadow-lg card h-[100%] p-3 w-full ">
+      <div className="border border-gray-300 rounded-md shadow-lg card p-3 w-full ">
         <div className="grid grid-cols-2 gap-4">
           <div className="flex flex-col">
             <QueueFormInput

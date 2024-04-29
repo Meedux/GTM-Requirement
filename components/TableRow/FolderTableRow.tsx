@@ -15,8 +15,8 @@ const FolderTableRow = ({
           <input type="checkbox" />
         </td>
         <td className="px-4 py-2 font-bold text-black font-joseph-sans text-sm ">
-          <div className="flex cursor-pointer">
-            <FaRegFolder className="text-black mr-2" />
+          <div className="flex cursor-pointer hover:text-[#00A2FF]">
+            <FaRegFolder className="text-black hover:text-[#00A2FF] mr-2" />
             {folderName}
           </div>
         </td>
@@ -24,7 +24,7 @@ const FolderTableRow = ({
           {date}
         </td>
         <td className="flex justify-center items-center mr-[50px]">
-          <FaRegTrashAlt className="text-red-500" />
+          <FaRegTrashAlt className="text-red-500 hover:text-red-700" />
         </td>
       </tr>
     </>
