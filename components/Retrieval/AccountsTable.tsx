@@ -87,7 +87,7 @@ const AccountsTable = () => {
 
       {url === "/retrieval" && (
         <div className="text-center w-[100%] lg:w-[110%] mt-4">
-          <button className="bg-[#006FEE] mb-1 px-4 py-2 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs md:text-base">
+          <button className="bg-[#006FEE] mb-1 px-6 py-1 text-white text-center rounded-lg shadow-lg font-joseph-sans text-xs md:text-base">
             Retrieve
           </button>
         </div>
