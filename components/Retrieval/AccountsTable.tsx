@@ -24,7 +24,7 @@ const AccountsTable = () => {
           </div>
         </div>
 
-        <div className={`${url === "/retrieval" ? "hidden" : "flex"}`}>
+        {/* <div className={`${url === "/retrieval" ? "hidden" : "flex"}`}>
           <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs md:text-base">
             Sync
           </button>
@@ -34,9 +34,9 @@ const AccountsTable = () => {
           <button className="bg-black mb-1 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs md:text-base">
             Delete
           </button>
-        </div>
+        </div> */}
       </div>
-      <div className="flex justify-between mt-1">
+      <div className="w-[100%] lg:w-[110%] flex justify-between mt-1 px-6">
         <span className="font-bold text-black font-joseph-sans">
           Account Retrievals
         </span>
@@ -44,10 +44,10 @@ const AccountsTable = () => {
           Queue Count: 1
         </span>
       </div>
-      <div className="border border-gray-300 rounded-md shadow-lg w-[100%] lg:w-[110%] card h-[90%] overflow-auto">
+      <div className=" rounded-md w-[100%] lg:w-[110%] card h-[90%] overflow-auto">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-gray-300">
+            <tr className="">
               <th className="px-4 py-2">
                 <input type="checkbox" />
               </th>
