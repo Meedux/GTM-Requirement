@@ -10,33 +10,33 @@ const ProfileDetails = () => {
       </div>
       <div className="grid grid-cols-2 gap-4 mb-4">
         <div className="flex flex-col">
-          <span className="text-black font-joseph-sans mb-3">Email: </span>
-          <span className="text-black font-joseph-sans mb-3">First Name: </span>
-          <span className="text-black font-joseph-sans mb-7">Last Name: </span>
+          <span className="text-black font-joseph-sans mb-3 text-[7px] sm:text-xs">Email: </span>
+          <span className="text-black font-joseph-sans mb-3 text-[7px] sm:text-xs">First Name: </span>
+          <span className="text-black font-joseph-sans mb-7 text-[7px] sm:text-xs">Last Name: </span>
 
           <input
             type="password"
-            className="p-2 rounded-md h-[3rem] bg-[#E7F1FE] mb-3"
+            className="p-2 rounded-md h-[3rem] bg-[#E7F1FE] mb-3 text-black font-joseph-sans"
             placeholder="New Password"
           />
         </div>
         <div className="flex flex-col">
-          <span className="text-black font-joseph-sans mb-3">
+          <span className="text-black font-joseph-sans mb-3 text-[7px] sm:text-xs">
             Organization:{" "}
           </span>
-          <span className="text-black font-joseph-sans mb-3">City: </span>
-          <span className="text-black font-joseph-sans mb-7">State: </span>
+          <span className="text-black font-joseph-sans mb-3 text-[7px] sm:text-xs">City: </span>
+          <span className="text-black font-joseph-sans mb-7 text-[7px] sm:text-xs">State: </span>
 
           <input
             type="password"
-            className="p-2 rounded-md h-[3rem] bg-[#E7F1FE] mb-3"
+            className="p-2 rounded-md h-[3rem] bg-[#E7F1FE] mb-3 text-black font-joseph-sans"
             placeholder="Confirm New Password"
           />
         </div>
       </div>
 
       <div className="flex justify-end">
-        <button className="bg-black text-white px-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+        <button className="bg-black text-white px-2 py-1 rounded-md shadow-lg font-joseph-sans text-[12px] sm:text-sm">
           Reset Password
         </button>
       </div>

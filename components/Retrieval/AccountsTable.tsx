@@ -17,7 +17,7 @@ const AccountsTable = () => {
         <div className="">
           <div className="flex w-full">
             <div className="flex justify-end">
-              <button className="bg-black mb-1 px-4 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-sm md:text-base">
+              <button className="bg-black mb-1 px-4 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs md:text-base">
                 Delete
               </button>
             </div>
@@ -37,10 +37,10 @@ const AccountsTable = () => {
         </div> */}
       </div>
       <div className="w-[100%] lg:w-[110%] flex justify-between mt-1 px-6">
-        <span className="font-bold text-black font-joseph-sans">
+        <span className="text-xs sm:text-sm font-bold text-black font-joseph-sans">
           Account Retrievals
         </span>
-        <span className="font-bold text-black font-joseph-sans">
+        <span className="text-xs sm:text-sm font-bold text-black font-joseph-sans">
           Queue Count: 1
         </span>
       </div>
@@ -51,22 +51,22 @@ const AccountsTable = () => {
               <th className="px-4 py-2">
                 <input type="checkbox" />
               </th>
-              <th className="text-start text-black text-xs font-bold">
+              <th className="text-start text-black text-[7px] sm:text-xs font-bold">
                 Last Name
               </th>
-              <th className="text-start text-black text-xs font-bold">
+              <th className="text-start text-black text-[7px] sm:text-xs font-bold">
                 First Name
               </th>
-              <th className="text-start text-black text-xs font-bold ">
+              <th className="text-start text-black text-[7px] sm:text-xs font-bold ">
                 City
               </th>
-              <th className="text-start text-black text-xs font-bold ">
+              <th className="text-start text-black text-[7px] sm:text-xs font-bold ">
                 State
               </th>
-              <th className="text-start text-black text-xs font-bold ">
+              <th className="text-start text-black text-[7px] sm:text-xs font-bold ">
                 Utility Provider
               </th>
-              <th className="text-start text-black text-xs font-bold ">
+              <th className="text-start text-black text-[7px] sm:text-xs font-bold ">
                 Folder
               </th>
             </tr>
