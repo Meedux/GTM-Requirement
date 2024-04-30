@@ -8,16 +8,16 @@ const AccountCardTwo = () => {
         <table className="w-full">
           <thead>
             <tr className="border-b border-gray-300">
-              <th className=" text-xs text-black font-bold font-joseph-sans">
+              <th className=" text-[7px] sm:text-xs text-black font-bold font-joseph-sans">
                 Account #
               </th>
-              <th className=" text-xs text-black font-bold font-joseph-sans">
+              <th className=" text-[7px] sm:text-xs text-black font-bold font-joseph-sans">
                 City, State
               </th>
-              <th className=" text-xs text-black font-bold font-joseph-sans">
+              <th className=" text-[7px] sm:text-xs text-black font-bold font-joseph-sans">
                 Utility
               </th>
-              <th className=" text-xs text-black font-bold font-joseph-sans">
+              <th className=" text-[7px] sm:text-xs text-black font-bold font-joseph-sans">
                 Last Sync
               </th>
             </tr>

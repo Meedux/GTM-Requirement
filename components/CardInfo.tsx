@@ -27,7 +27,7 @@ const CardInfo = () => {
                 />
               </div>
               <div className="grid grid-cols-2 gap-4 mb-5">
-                <div className="flex flex-col justify-center items-center w-full">
+                <div className="flex flex-col justify-center items-center w-full font-joseph-sans">
                   <label
                     htmlFor="expirationDate"
                     className="text-black text-[7px] sm:text-xs whitespace-nowrap font-joseph-sans"
@@ -37,7 +37,7 @@ const CardInfo = () => {
                   <input
                     type="text"
                     id="expirationDate"
-                    className="border border-gray-300 rounded-md p-2 w-full"
+                    className="border border-gray-300 rounded-md p-2 w-full font-joseph-sans"
                     placeholder="MM/YY"
                   />
                 </div>
@@ -51,7 +51,7 @@ const CardInfo = () => {
                   <input
                     type="text"
                     id="cvv"
-                    className="border border-gray-300 rounded-md p-2 w-full text-black"
+                    className="border border-gray-300 rounded-md p-2 w-full text-black font-joseph-sans"
                     placeholder="CVC"
                   />
                 </div>

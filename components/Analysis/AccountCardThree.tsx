@@ -5,7 +5,7 @@ const AccountCardThree = () => {
   return (
     <div className="">
       <div className="border p-2 border-gray-300 rounded-md shadow-lg w-full card h-[96%] md:h-[93%] overflow-auto">
-        <table className="w-full">
+        {/* <table className="w-full">
           <thead>
             <tr className="border-b border-gray-300">
               <th className=" text-xs text-black font-bold font-joseph-sans">
@@ -28,7 +28,7 @@ const AccountCardThree = () => {
             <AccountCardRow />
             <AccountCardRow />
           </tbody>
-        </table>
+        </table> */}
       </div>
     </div>
   )
