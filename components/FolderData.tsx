@@ -46,10 +46,10 @@ const FolderData = () => {
               <th className="px-4 py-2">
                 <input type="checkbox" />
               </th>
-              <th className="px-4 py-2 text-start text-black font-bold font-joseph-sans">
+              <th className="px-4 py-2 text-xs md:text-sm text-start text-black font-bold font-joseph-sans">
                 Name
               </th>
-              <th className="px-4 py-2 text-start text-black font-bold font-joseph-sans">
+              <th className="px-4 py-2 text-xs md:text-sm whitespace-nowrap text-start text-black font-bold font-joseph-sans">
                 Last Modified
               </th>
               <th></th>

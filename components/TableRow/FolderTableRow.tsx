@@ -14,13 +14,13 @@ const FolderTableRow = ({
         <td className="px-4 py-2 flex justify-center items-center h-full">
           <input type="checkbox" />
         </td>
-        <td className="px-4 py-2 font-bold text-black font-joseph-sans text-sm ">
+        <td className="px-4 py-2 font-bold text-black font-joseph-sans text-xs md:text-sm ">
           <div className="flex cursor-pointer hover:text-[#00A2FF]">
             <FaRegFolder className="text-black hover:text-[#00A2FF] mr-2" />
             {folderName}
           </div>
         </td>
-        <td className="px-4 py-2 font-bold text-black font-joseph-sans text-sm">
+        <td className="px-4 py-2 font-bold text-black font-joseph-sans text-xs md:text-sm">
           {date}
         </td>
         <td className="flex justify-center items-center mr-[50px]">
