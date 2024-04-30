@@ -50,7 +50,7 @@ const ForgotPassword = ({
                 className="bg-[#006FEE] w-[12rem] text-white text-center p-2 rounded-md shadow-lg"
                 onClick={(e) => sent ? setFormState("resetPassword") : verifyEmail(emailLogin)}
               >
-                {sent ? "Login" : "RESET PASSWORD"}
+                {sent ? "LOGIN" : "RESET PASSWORD"}
               </button>
               {sent ? (
                 <p className="text-[#006FEE] font-joseph-sans">

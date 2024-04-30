@@ -110,7 +110,7 @@ const Login = ({
           className="bg-[#006FEE] text-white text-center p-2 rounded-md w-[10rem] shadow-lg font-joseph-sans"
           onClick={(e) => onLogin()}
         >
-          Login
+          LOGIN
         </button>
         <p
           className="text-[#006FEE] cursor-pointer font-joseph-sans"

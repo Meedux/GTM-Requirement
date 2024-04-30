@@ -15,7 +15,7 @@ const CardInfo = () => {
               <div className="flex flex-col mb-3">
                 <label
                   htmlFor="cardNumber"
-                  className="text-black text-[7px] sm:text-xs font-joseph-sans"
+                  className="text-black text-[12px] md:text-base font-joseph-sans"
                 >
                   Card Number
                 </label>
@@ -30,7 +30,7 @@ const CardInfo = () => {
                 <div className="flex flex-col justify-center items-center w-full font-joseph-sans">
                   <label
                     htmlFor="expirationDate"
-                    className="text-black text-[7px] sm:text-xs whitespace-nowrap font-joseph-sans"
+                    className="text-black text-[12px] md:text-base whitespace-nowrap font-joseph-sans"
                   >
                     Expiration Date
                   </label>
@@ -44,7 +44,7 @@ const CardInfo = () => {
                 <div className="flex flex-col justify-center items-center w-full text-black">
                   <label
                     htmlFor="cvv"
-                    className="text-black text-[7px] sm:text-xs font-joseph-sans"
+                    className="text-black text-[12px] md:text-base font-joseph-sans"
                   >
                     CVV
                   </label>
@@ -58,23 +58,23 @@ const CardInfo = () => {
               </div>
 
               <div>
-                <p className="font-bold text-black text-[14px] sm:text-lg mb-3 font-joseph-sans">
+                <p className="font-bold text-black text-[14px] md:text-base mb-3 font-joseph-sans">
                   Billing Address
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col">
-                    <span className="text-black text-[7px] sm:text-xs font-bold font-joseph-sans mb-3">
+                    <span className="text-black text-[12px] md:text-base font-bold font-joseph-sans mb-3">
                       Street:{" "}
                     </span>
-                    <span className="text-black text-[7px] sm:text-xs font-bold font-joseph-sans mb-3">
+                    <span className="text-black text-[12px] md:text-base font-bold font-joseph-sans mb-3">
                       State:{" "}
                     </span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-black text-[7px] sm:text-xs font-bold font-joseph-sans mb-3">
+                    <span className="text-black text-[12px] md:text-base font-bold font-joseph-sans mb-3">
                       City:{" "}
                     </span>
-                    <span className="text-black text-[7px] sm:text-xs font-bold font-joseph-sans">
+                    <span className="text-black text-[12px] md:text-base font-bold font-joseph-sans">
                       Zip Code:{" "}
                     </span>
                   </div>
@@ -82,20 +82,20 @@ const CardInfo = () => {
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-black text-[7px] sm:text-base font-joseph-sans mb-3">
+              <span className="text-black text-[12px] md:text-base font-joseph-sans mb-3">
                 03/22/24 . Current
               </span>
-              <span className="text-black text-[7px] sm:text-base font-joseph-sans mb-3">
+              <span className="text-black text-[12px] md:text-base font-joseph-sans mb-3">
                 Fixed Bill: $500
               </span>
-              <span className="text-black text-[7px] sm:text-base font-joseph-sans mb-7">
+              <span className="text-black text-[12px] md:text-base font-joseph-sans mb-7">
                 Total Syncs: 23
               </span>
             </div>
           </div>
 
           <div className="flex justify-start">
-            <button className="bg-black text-white px-2 py-1 text-[12px] sm:text-sm rounded-md shadow-lg font-joseph-sans">
+            <button className="bg-black text-white px-2 py-1 text-[12px] md:text-base rounded-md shadow-lg font-joseph-sans">
               Add New Payment Method
             </button>
           </div>

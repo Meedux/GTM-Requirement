@@ -19,7 +19,7 @@ const Success = ({
           className="bg-[#006FEE] w-[12rem] text-white text-center p-2 rounded-md shadow-lg font-joseph-sans"
           onClick={(e) => setFormState("login")}
         >
-          Login
+          LOGIN
         </button>
       </div>
     </>

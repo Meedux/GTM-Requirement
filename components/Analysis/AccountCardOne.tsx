@@ -14,10 +14,10 @@ const AccountCardOne = () => {
           />
 
           <div className="flex">
-            <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs">
+            <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-[12px] sm:text-[14px]">
               Sync
             </button>
-            <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs">
+            <button className="bg-black mb-1 mr-2 px-2 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-[12px] sm:text-[14px]">
               Download
             </button>
           </div>
@@ -26,16 +26,16 @@ const AccountCardOne = () => {
           <thead>
             <tr className="p-1">
               <th></th>
-              <th className=" text-[7px] sm:text-xs text-black font-bold font-joseph-sans">
+              <th className=" text-[12px] sm:text-[14px] text-black font-bold font-joseph-sans">
                 Account #
               </th>
-              <th className=" text-[7px] sm:text-xs text-black font-bold font-joseph-sans">
+              <th className=" text-[12px] sm:text-[14px] text-black font-bold font-joseph-sans">
                 City, State
               </th>
-              <th className=" text-[7px] sm:text-xs text-black font-bold font-joseph-sans">
+              <th className=" text-[12px] sm:text-[14px] text-black font-bold font-joseph-sans">
                 Utility
               </th>
-              <th className=" text-[7px] sm:text-xs text-black font-bold font-joseph-sans">
+              <th className=" text-[12px] sm:text-[14px] text-black font-bold font-joseph-sans">
                 Last Sync
               </th>
             </tr>

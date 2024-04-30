@@ -23,7 +23,7 @@ const ResetPassword = ({
 
             <div className="flex flex-col items-center text-center">
               <button className="bg-[#006FEE] w-[12rem] text-white text-center p-2 rounded-md shadow-lg font-joseph-sans" onClick={e => setFormState("success")}>
-                Save
+                SAVE
               </button>
             </div>
           </div>

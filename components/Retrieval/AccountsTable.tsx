@@ -37,10 +37,10 @@ const AccountsTable = () => {
         </div> */}
       </div>
       <div className="w-[100%] lg:w-[110%] flex justify-between mt-1 px-6">
-        <span className="text-xs sm:text-sm font-bold text-black font-joseph-sans">
+        <span className="text-[12px] md:text-base font-bold text-black font-joseph-sans">
           Account Retrievals
         </span>
-        <span className="text-xs sm:text-sm font-bold text-black font-joseph-sans">
+        <span className="text-[12px] md:text-base font-bold text-black font-joseph-sans">
           Queue Count: 1
         </span>
       </div>
@@ -51,22 +51,22 @@ const AccountsTable = () => {
               <th className="px-4 py-2">
                 <input type="checkbox" />
               </th>
-              <th className="text-start text-black text-[7px] sm:text-xs font-bold">
+              <th className="text-start px-1 text-black text-[12px] sm:text-[14px] font-bold">
                 Last Name
               </th>
-              <th className="text-start text-black text-[7px] sm:text-xs font-bold">
+              <th className="text-start px-1 text-black text-[12px] sm:text-[14px] font-bold">
                 First Name
               </th>
-              <th className="text-start text-black text-[7px] sm:text-xs font-bold ">
+              <th className="text-start px-1 text-black text-[12px] sm:text-[14px] font-bold ">
                 City
               </th>
-              <th className="text-start text-black text-[7px] sm:text-xs font-bold ">
+              <th className="text-start px-1 text-black text-[12px] sm:text-[14px] font-bold ">
                 State
               </th>
-              <th className="text-start text-black text-[7px] sm:text-xs font-bold ">
+              <th className="text-start px-1 text-black text-[12px] sm:text-[14px] font-bold ">
                 Utility Provider
               </th>
-              <th className="text-start text-black text-[7px] sm:text-xs font-bold ">
+              <th className="text-start px-1 text-black text-[12px] sm:text-[14px] font-bold ">
                 Folder
               </th>
             </tr>
