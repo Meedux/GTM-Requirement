@@ -104,7 +104,7 @@ const CreateAccount = ({
       {isError && (
         <div className="text-red-500 p-2 font-joseph-sans">{error}</div>
       )}
-      <div className="grid grid-cols-2 gap-4 mb-4 w-full">
+      <div className="grid grid-cols-2 gap-4 w-[60%] md:w-full">
         <div className="flex flex-col justify-center items-center">
           <input
             type="text"

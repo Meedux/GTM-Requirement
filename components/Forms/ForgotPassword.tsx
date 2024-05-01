@@ -53,7 +53,7 @@ const ForgotPassword = ({
 
             <div className="flex flex-col items-center text-center">
               <button
-                className="bg-[#006FEE] w-[6rem] md:w-[12rem] mb-3 text-white text-center p-2 rounded-md shadow-lg"
+                className="bg-[#006FEE] w-[12rem] mb-3 text-white text-center p-2 rounded-md shadow-lg"
                 onClick={(e) => sent ? setFormState("resetPassword") : verifyEmail(emailLogin)}
               >
                 {sent ? "LOGIN" : "RESET PASSWORD"}
