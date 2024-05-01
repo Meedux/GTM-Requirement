@@ -51,22 +51,22 @@ const AccountsTable = () => {
               <th className="px-4 py-2">
                 <input type="checkbox" />
               </th>
-              <th className="text-start px-1 text-black text-[12px] sm:text-[14px] font-bold">
+              <th className="text-start whitespace-nowrap pr-2 sm:pr-1 text-black text-[10px] sm:text-[12px] font-bold">
                 Last Name
               </th>
-              <th className="text-start px-1 text-black text-[12px] sm:text-[14px] font-bold">
+              <th className="text-start whitespace-nowrap pr-2 sm:pr-1 text-black text-[10px] sm:text-[12px] font-bold">
                 First Name
               </th>
-              <th className="text-start px-1 text-black text-[12px] sm:text-[14px] font-bold ">
+              <th className="text-start whitespace-nowrap pr-2 sm:pr-1 text-black text-[10px] sm:text-[12px] font-bold ">
                 City
               </th>
-              <th className="text-start px-1 text-black text-[12px] sm:text-[14px] font-bold ">
+              <th className="text-start whitespace-nowrap pr-2 sm:pr-1 text-black text-[10px] sm:text-[12px] font-bold ">
                 State
               </th>
-              <th className="text-start px-1 text-black text-[12px] sm:text-[14px] font-bold ">
+              <th className="text-start whitespace-nowrap pr-2 sm:pr-1 text-black text-[10px] sm:text-[12px] font-bold ">
                 Utility Provider
               </th>
-              <th className="text-start px-1 text-black text-[12px] sm:text-[14px] font-bold ">
+              <th className="text-start whitespace-nowrap pr-2 sm:pr-1 text-black text-[10px] sm:text-[12px] font-bold ">
                 Folder
               </th>
             </tr>

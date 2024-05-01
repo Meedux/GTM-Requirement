@@ -55,22 +55,22 @@ const Accounts = () => {
               <th className="px-4 py-2">
                 <input type="checkbox" />
               </th>
-              <th className="text-start px-2 sm:px-1 text-black text-[12px] sm:text-[14px] font-bold whitespace-nowrap">
+              <th className="text-start pr-2 sm:pr-1 text-black text-[12px] sm:text-[14px] font-bold whitespace-nowrap">
                 Account #
               </th>
-              <th className="text-start px-2 sm:px-1 text-black text-[12px] sm:text-[14px] font-bold ">
+              <th className="text-start pr-2 sm:pr-1 text-black text-[12px] sm:text-[14px] font-bold ">
                 City
               </th>
-              <th className="text-start px-2 sm:px-1 text-black text-[12px] sm:text-[14px] font-bold ">
+              <th className="text-start pr-2 sm:pr-1 text-black text-[12px] sm:text-[14px] font-bold ">
                 State
               </th>
-              <th className="text-start px-2 sm:px-1 text-black text-[12px] sm:text-[14px] font-bold ">
+              <th className="text-start pr-2 sm:pr-1 text-black text-[12px] sm:text-[14px] font-bold ">
                 Utility
               </th>
-              <th className="text-start px-2 sm:px-1 text-black text-[12px] sm:text-[14px] font-bold whitespace-nowrap">
+              <th className="text-start pr-2 sm:pr-1 text-black text-[12px] sm:text-[14px] font-bold whitespace-nowrap">
                 Sync Date
               </th>
-              <th className="text-start px-2 sm:px-1 text-black text-[12px] sm:text-[14px] font-bold ">
+              <th className="text-start pr-2 sm:pr-1 text-black text-[12px] sm:text-[14px] font-bold ">
                 Folder
               </th>
             </tr>

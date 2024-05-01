@@ -24,7 +24,7 @@ const RetrievalAccountTableRow = ({
       </td>
       <td className="text-[12px] sm:text-[14px]  text-black font-joseph-sans">{LastName}</td>
       <td className="text-[12px] sm:text-[14px]  text-black font-joseph-sans">{FirstName}</td>
-      <td className="text-[12px] sm:text-[14px]  text-gray-500 font-joseph-sans">{city}</td>
+      <td className="text-[12px] sm:text-[14px]  text-gray-500 font-joseph-sans whitespace-nowrap">{city}</td>
       <td className="text-[12px] sm:text-[14px] text-gray-500 font-joseph-sans">{state}</td>
       <td className="text-[12px] sm:text-[14px] text-black font-joseph-sans">{utility}</td>
       <td className="flex items-center justify-start">
