@@ -44,7 +44,7 @@ const AccountsTable = () => {
           Queue Count: 1
         </span>
       </div>
-      <div className=" rounded-md w-[100%] lg:w-[110%] card h-[90%] overflow-auto">
+      <div className=" rounded-md w-[100%] lg:w-[110%] card h-[82%] overflow-auto">
         <table className="w-full">
           <thead>
             <tr className="">
