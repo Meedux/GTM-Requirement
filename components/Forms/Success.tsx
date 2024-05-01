@@ -7,10 +7,11 @@ const Success = ({
 }) => {
   return (
     <>
+    <div className="flex flex-col justify-center items-center">
       <h1 className="text-5xl text-black font-bold text-center font-joseph-sans">
         Success!
       </h1>
-      <p className="text-[#006FEE] mb-5 font-bold text-xl w-[40rem] text-center font-joseph-sans">
+      <p className="text-[#006FEE] mb-5 font-bold text-[16px] md:text-xl w-[40rem] text-center font-joseph-sans">
         Your pasword has been sucessfully reset.
       </p>
 
@@ -22,6 +23,7 @@ const Success = ({
           LOGIN
         </button>
       </div>
+    </div>
     </>
   );
 };
