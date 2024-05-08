@@ -120,7 +120,7 @@ const Sidebar = () => {
 
             <span className="fixed bottom-0 p-2">
               <Link href={"/login"}>
-                <button className="p-1 rounded-md bg-black text-[0.50rem] text-white font-joseph-sans mb-6">
+                <button className="p-1 rounded-md bg-black text-sm text-white font-joseph-sans mb-6">
                   SIGN OUT
                 </button>
               </Link>
