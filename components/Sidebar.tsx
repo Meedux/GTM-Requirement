@@ -98,7 +98,7 @@ const Sidebar = () => {
           <RiCloseFill className="text-black" size={30} />
         </button>
 
-        <div className="h-screen md:hidden flex justify-center items-center">
+        <div className="h-full md:hidden flex justify-center items-center">
           <div
             className={`h-[70%] w-[20rem] flex-col justify-between items-center flex`}
           >
