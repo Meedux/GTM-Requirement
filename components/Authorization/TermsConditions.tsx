@@ -8,7 +8,7 @@ const TermsConditions = ({
 }) => {
 return (
     <div className='h-screen mx-[10%] flex flex-col justify-center items-center'>
-        <h1 className="text-white font-joseph-sans text-8xl mb-9 font-bold">Chora</h1>
+        <Image src={'/CHORA-WHITE.svg'} className="mb-7" width={300} height={200} alt='Chora Logo' />
 
         {/* Terms and Conditions Card with white Background */}
         <div className="bg-white p-2 md:w-[50%] h-[70%] flex flex-col justify-center items-center rounded-md shadow-2xl">

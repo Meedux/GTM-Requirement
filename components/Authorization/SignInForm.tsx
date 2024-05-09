@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React, { useContext } from 'react'
-import { userPool } from '@/util/UserPool'
-import { AuthContext } from '@/util/AuthContext'
+import { userPool } from './../../util/UserPool'
 import { AuthenticationDetails, CognitoUser } from 'amazon-cognito-identity-js'
 
 const SignInForm = ({
@@ -51,11 +50,11 @@ const SignInForm = ({
     }
   return (
     <div className='h-screen mx-[10%] flex flex-col justify-center items-center'>
-        <Image src={'/CHORA.svg'} className="mb-7" width={300} height={200} alt='Chora Logo' />
+        <Image src={'/CHORA-WHITE.svg'} className="mb-7" width={300} height={200} alt='Chora Logo' />
 
         {/* Sign In Card with white Background */}
         <div className="bg-white p-2 w-[25rem] flex flex-col justify-center items-center rounded-md shadow-2xl">
-            <Image src={'/PG&E.svg'} width={100} height={100} alt='PG&E Logo' className='mt-5 mb-9'/>
+            <Image src={'/PG&E.svg'} width={100} height={100} alt='PG&E Logo' className='mt-5 mb-9 '/>
             <h1 className="text-black font-joseph-sans text-4xl mb-4 font-bold">Login Account</h1>
             {
                 isError && (

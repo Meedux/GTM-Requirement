@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const UtilityProvider = ({
@@ -7,9 +8,7 @@ const UtilityProvider = ({
 }) => {
   return (
     <div className="h-screen mx-[10%] flex flex-col justify-center items-end">
-      <h1 className="text-white font-joseph-sans text-8xl mb-9 font-bold">
-        Chora
-      </h1>
+      <Image src={'/CHORA-WHITE.svg'} className="mb-7" width={300} height={200} alt='Chora Logo' />
       <h1 className="text-white font-joseph-sans text-3xl mb-5 font-bold">
         Utility Data Authorzation Portal
       </h1>
