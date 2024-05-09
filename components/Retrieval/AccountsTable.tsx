@@ -44,10 +44,10 @@ const AccountsTable = () => {
           Queue Count: 1
         </span>
       </div>
-      <div className=" rounded-md w-[100%] lg:w-[110%] card h-[90%] overflow-auto">
+      <div className="border border-gray-300 rounded-md shadow-lg w-[100%] lg:w-[110%] card h-[89%] overflow-auto">
         <table className="w-full">
           <thead>
-            <tr className="">
+            <tr className="border-b border-gray-300">
               <th className="px-4 py-2">
                 <input type="checkbox" />
               </th>
