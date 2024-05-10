@@ -1,5 +1,5 @@
 import Accounts from "@/components/Accounts";
-import CardInfo from "@/components/CardInfo";
+import CardInfo from "@/components/Forms/CardForm";
 import ProfileDetails from "@/components/ProfileDetails";
 import React from "react";
 
