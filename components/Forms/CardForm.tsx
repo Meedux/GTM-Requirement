@@ -44,9 +44,9 @@ const CheckoutForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <PaymentElement />
-      <button type="submit" className={`${stripe ? "block" : "hidden"}`} disabled={!stripe || !elements}>
+      {/* <button type="submit" className={`${stripe ? "block" : "hidden"}`} disabled={!stripe || !elements}>
         Pay
-      </button>
+      </button> */}
       {errorMessage && <div>{errorMessage}</div>}
     </form>
   );
@@ -60,10 +60,10 @@ const options: StripeElementsOptions = {
   currency: 'usd',
 };
 
-const CardInfo = () => (
+const CardForm = () => (
   <Elements stripe={stripePromise} options={options}>
     <CheckoutForm />
   </Elements>
 );
 
-export default CardInfo;
+export default CardForm;
