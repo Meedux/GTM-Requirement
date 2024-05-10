@@ -39,7 +39,7 @@ const FolderData = () => {
           )
         }
       </div>
-      <div className="border border-gray-300 rounded-md shadow-lg w-full card h-[96%] md:h-[93%] overflow-auto">
+      <div className="border border-gray-300 rounded-md shadow-lg card w-full h-[90%] p-3 ">
         <table className="w-full">
           <thead>
             <tr className="border-b border-gray-300">
