@@ -4,9 +4,14 @@ import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import AccountTableRow from "./TableRow/AccountTableRow";
 import { usePathname } from "next/navigation";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { AccountQueue } from "@/redux/util_types";
 
 const Accounts = () => {
   const url = usePathname();
+  const retrieval = useAppSelector((state) => state.retrieval);
+  const dispatch = useAppDispatch();
+
   return (
     <div className="mt-7 md:mt-0">
       <div className={`flex flex-row ${url === '/retrieval' ? "justify-end" : url === "/settings"? "mt-1 lg:-mt-[2.2rem] justify-between" : "justify-between"} items-center w-[100%] lg:w-[110%]`}>
@@ -84,6 +89,8 @@ const Accounts = () => {
               date="02/11/24"
               folderName="Mcdonalds"
             />
+
+            
           </tbody>
         </table>
       </div>

@@ -1,11 +1,32 @@
 "use client";
-import React from "react";
-import { FaRegTrashAlt } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
 import FolderTableRow from "./TableRow/FolderTableRow";
 import { usePathname } from "next/navigation";
+import { Folder } from "@/redux/util_types";
+import {
+  fetchFolders,
+} from "@/redux/retrieval/thunks";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+
+  
 
 const FolderData = () => {
   const url = usePathname();
+  const dispatch = useAppDispatch();
+  const retrieval = useAppSelector((state) => state.retrieval);
+
+
+  const [folders, setFolders] = useState<Folder[]>([]);
+
+  useEffect(() => {
+    Promise.resolve(dispatch(fetchFolders()))
+  }, [retrieval.selectedFolder, retrieval.accountQueue]);
+
+  useEffect(() => {
+    setFolders(retrieval.folders);
+    console.log(retrieval.folders)
+  }, [retrieval.folders]);
+
   return (
     <div className="">
       <div className="flex flex-row justify-between items-center">
@@ -56,10 +77,14 @@ const FolderData = () => {
             </tr>
           </thead>
           <tbody>
-            <FolderTableRow
-                folderName="Dummy Data 2"
-                date="2023-04-22"
-            />
+            {
+              folders.map((folder: Folder) => (
+                <FolderTableRow
+                    key={folder.name}
+                    folder={folder}
+                />
+              ))
+            }
           </tbody>
         </table>
       </div>

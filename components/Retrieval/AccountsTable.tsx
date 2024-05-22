@@ -4,9 +4,13 @@ import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import RetrievalAccountTableRow from "../TableRow/RetrievalAccountTableRow";
 import { usePathname } from "next/navigation";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { AccountQueue } from "@/redux/util_types";
 
 const AccountsTable = () => {
   const url = usePathname();
+  const retrieval = useAppSelector((state) => state.retrieval);
+  const dispatch = useAppDispatch();
   return (
     <div className="mt-7 md:mt-0">
       <div
@@ -72,15 +76,18 @@ const AccountsTable = () => {
             </tr>
           </thead>
           <tbody>
-            <RetrievalAccountTableRow
-              LastName="Doe"
-              FirstName="John"
-              city="San Francisco"
-              state="CA"
-              utility="PG&E"
-              date="02/11/24"
-              folderName="Mcdonalds"
-            />
+            {retrieval.accountQueue.map((account: AccountQueue) => (
+              <RetrievalAccountTableRow
+                key={account.lastName}
+                LastName={account.lastName}
+                FirstName={account.firstName}
+                city={account.city}
+                state={account.state}
+                utility={account.utility}
+                date={account.date}
+                folderName={retrieval.selectedFolder.name}
+              />
+            ))}
           </tbody>
         </table>
       </div>

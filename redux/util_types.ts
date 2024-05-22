@@ -9,5 +9,6 @@ export interface AccountQueue {
     city: string
     state: string
     utility: string
+    date: string
     folder: string
 }

@@ -1,33 +1,40 @@
 "use client";
 
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { selectFolder } from "@/redux/retrieval/thunks";
+import { Folder } from "@/redux/util_types";
 import React from "react";
 import { FaRegTrashAlt, FaRegFolder } from "react-icons/fa";
 
 const FolderTableRow = ({
-  folderName,
-  date,
+  folder
 }: {
-  folderName: string;
-  date: string;
+  folder: Folder;
 }) => {
   const [onItemHover, setOnItemHover] = React.useState(false);
+  const dispatch = useAppDispatch();
+  const retrieval = useAppSelector((state) => state.retrieval);
+
+  const selectFolderData = () => {
+    dispatch(selectFolder(folder));
+  };
   return (
     <>
       <tr>
         <td className="px-4 py-2 flex justify-center items-center h-full">
-          <div className="flex items-center cursor-pointer hover:text-[#00A2FF]">
+          <div className="flex items-center">
             <input type="checkbox" />
           </div>
         </td>
         <td className="px-2 py-2 text-black font-joseph-sans text-[12px] sm:text-base ">
-          <div className={`flex font-joseph-sans ${onItemHover && "text-[#00A2FF]"} cursor-pointer whitespace-nowrap`} onMouseEnter={e => setOnItemHover(true)} onMouseLeave={e => setOnItemHover(false)}>
-            <FaRegFolder size={20} className={`text-black text-center ${onItemHover && "text-[#00A2FF]"} mr-2`} />
-            {folderName}
+          <div className={`flex font-joseph-sans cursor-pointer ${retrieval.selectedFolder.name == folder.name ? "text-[#00A2FF]" : ""} whitespace-nowrap`} onClick={e => selectFolderData()}>
+            <FaRegFolder size={20} className={`text-center ${retrieval.selectedFolder.name == folder.name ? "text-[#00A2FF]" : "text-black"} mr-2`} />
+            {folder.name}
           </div>
         </td>
         <td className="px-2 py-2 text-black font-joseph-sans text-[12px] sm:text-base">
           <div className="flex font-joseph-sans cursor-pointer whitespace-nowrap">
-            {date}
+            {folder.lastModified}
             <FaRegTrashAlt className="text-red-500 text-center hover:text-red-700 ml-[50px]" />
           </div>
         </td>

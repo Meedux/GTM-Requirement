@@ -23,6 +23,7 @@ const accounts: AccountQueue[] = [
         city: "New York",
         state: "NY",
         utility: "ConEd",
+        date: "2021-01-01",
         folder: "Folder 1",
     },
     {
@@ -31,6 +32,7 @@ const accounts: AccountQueue[] = [
         city: "Los Angeles",
         state: "CA",
         utility: "LADWP",
+        date: "2021-01-01",
         folder: "Folder 2",
     },
     {
@@ -39,26 +41,26 @@ const accounts: AccountQueue[] = [
         city: "Chicago",
         state: "IL",
         utility: "ComEd",
+        date: "2021-01-01",
         folder: "Folder 3",
     },
 ];
 
 export const fetchFolders = createAsyncThunk(
     'retrieval/fetchFolders',
-    async () => {
-        await setIsLoading(true)
-
-        
-        await setIsLoading(false)
-        await setFolders(folders)
+    async (_, { dispatch }) => {
+      dispatch(setIsLoading(true));
+      // Fetch folders here and assign it to the `folders` variable
+      dispatch(setFolders(folders));
+      dispatch(setIsLoading(false));
     }
 );
 
 export const selectFolder = createAsyncThunk(
     'retrieval/selectFolder',
-    async (folder: Folder) => {
-        await setSelectedFolder(folder)
-        await setIsLoading(true)
+    async (folder: Folder, { dispatch }) => {
+        dispatch(setSelectedFolder(folder))
+        dispatch(setIsLoading(true))
 
         const acc: AccountQueue[] = []
         
@@ -68,8 +70,8 @@ export const selectFolder = createAsyncThunk(
             }
         })
 
-        await setIsLoading(false)
-        await setAccountQueue(acc)
+        dispatch(setIsLoading(false))
+        dispatch(setAccountQueue(acc))
     }
 );
 
