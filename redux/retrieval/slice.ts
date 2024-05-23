@@ -20,7 +20,6 @@ const retrievalSlice = createSlice({
             state.folders = action.payload;
         },
         setAccountQueue: (state, action: PayloadAction<AccountQueue[]>) => {
-            console.log(action)
             state.accountQueue = action.payload;
         },
         setSelectedFolder: (state, action: PayloadAction<Folder>) => {

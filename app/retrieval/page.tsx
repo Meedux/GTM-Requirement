@@ -1,3 +1,5 @@
+"use client";
+
 import AccountData from "@/components/AccountData";
 import Accounts from "@/components/Accounts";
 import FolderData from "@/components/FolderData";

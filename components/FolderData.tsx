@@ -64,9 +64,6 @@ const FolderData = () => {
         <table className="w-full">
           <thead>
             <tr className="border-b border-gray-300">
-              <th className="px-4 py-2">
-                <input type="checkbox" />
-              </th>
               <th className="px-4 py-2 text-[12px] sm:text-base text-start text-black font-bold font-joseph-sans">
                 Name
               </th>
