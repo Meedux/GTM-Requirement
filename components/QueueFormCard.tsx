@@ -30,7 +30,7 @@ const QueueFormCard = () => {
         state,
         utility,
         zip,
-        date: new Date().toISOString(),
+        date: new Date().toISOString().split('T')[0],
         folder: retrieval.selectedFolder.name,
       })
     );

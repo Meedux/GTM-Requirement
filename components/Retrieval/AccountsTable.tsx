@@ -45,7 +45,7 @@ const AccountsTable = () => {
           Account Retrievals
         </span>
         <span className="text-[12px] md:text-base font-bold text-black font-joseph-sans">
-          Queue Count: 1
+          Queue Count: {retrieval.accountQueue.length}
         </span>
       </div>
       <div className="border border-gray-300 rounded-md shadow-lg w-[100%] lg:w-[110%] card h-[96.5%] overflow-auto">

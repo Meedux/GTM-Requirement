@@ -17,41 +17,7 @@ const folders: Folder[] = [
     { name: "Folder 3", lastModified: "2021-01-01" },
 ];
 
-const accounts: AccountQueue[] = [
-    {
-        lastName: "Doe",
-        firstName: "John",
-        email: "johndoe@gmail.com",
-        city: "New York",
-        state: "NY",
-        utility: "ConEd",
-        date: "2021-01-01",
-        folder: "Folder 1",
-        zip: "10001",
-    },
-    {
-        lastName: "Smith",
-        firstName: "Jane",
-        email: "janesmith@gmail.com",
-        city: "Los Angeles",
-        state: "CA",
-        utility: "LADWP",
-        date: "2021-01-01",
-        folder: "Folder 2",
-        zip: "10001",
-    },
-    {
-        lastName: "Johnson",
-        firstName: "James",
-        email: "jamesjohnson@gmail.com",
-        city: "Chicago",
-        state: "IL",
-        utility: "ComEd",
-        date: "2021-01-01",
-        folder: "Folder 3",
-        zip: "10001",
-    },
-];
+
 
 export const fetchFolders = createAsyncThunk(
     'retrieval/fetchFolders',
@@ -68,7 +34,21 @@ export const addAccountToQueue = createAsyncThunk(
     async (account: AccountQueue, { dispatch, getState }) => {
         const retrieval = (getState() as RootState).retrieval;
         const acc: AccountQueue[] = [...retrieval.accountQueue, account];
-        accounts.push(account);
+
+        const data = [
+            account
+        ]
+
+        const res = await fetch('http://127.0.0.1:8000/api/customer/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        const results = await res.json()
+        console.log(results)
+
         dispatch(setAccountQueue(acc));
     }
 );
@@ -88,9 +68,20 @@ export const selectFolder = createAsyncThunk(
         // Use the retrieval state as needed
         dispatch(setIsLoading(true))
 
+        // fetch the data from localhost:8000/api/customer
+        const response = await fetch('http://127.0.0.1:8000/api/customer', {
+            method: 'GET',
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        });
+        const accounts = await response.json();
+        console.log(accounts);
+
+
         const acc: AccountQueue[] = []
         
-        accounts.forEach((account) => {
+        accounts.forEach((account: AccountQueue) => {
             if (account.folder === folder.name) {
                 acc.push(account)
             }
