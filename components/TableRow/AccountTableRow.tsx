@@ -18,10 +18,10 @@ const AccountTableRow = ({
 }) => {
   return (
     <tr className="mx-4">
-      <td className="px-4 py-2 flex items-center justify-center">
+      {/* <td className="px-4 py-2 flex items-center justify-center">
         <input type="checkbox" />
-      </td>
-      <td className="text-[12px] sm:text-[14px] pr-2 sm:pr-1 text-black font-joseph-sans">{accountNumber}</td>
+      </td> */}
+      <td className="px-4 py-2 text-[12px] sm:text-[14px] pr-2 sm:pr-1 text-black font-joseph-sans">{accountNumber}</td>
       <td className="text-[12px] sm:text-[14px] pr-2 sm:pr-1 text-gray-400 font-joseph-sans whitespace-nowrap sm:whitespace-normal">{city}</td>
       <td className="text-[12px] sm:text-[14px] pr-2 sm:pr-1 text-gray-400 font-joseph-sans">{state}</td>
       <td className="text-[12px] sm:text-[14px] pr-2 sm:pr-1 text-black font-joseph-sans">{utility}</td>

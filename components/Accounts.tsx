@@ -5,7 +5,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import AccountTableRow from "./TableRow/AccountTableRow";
 import { usePathname } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { AccountQueue } from "@/redux/util_types";
+import { AccountQueue, AuthorizedAccount } from "@/redux/util_types";
 
 const Accounts = () => {
   const url = usePathname();
@@ -57,10 +57,10 @@ const Accounts = () => {
         <table className="w-full table-auto">
           <thead>
             <tr className="border-b border-gray-300">
-              <th className="px-4 py-2">
+              {/* <th className="px-4 py-2">
                 <input type="checkbox" />
-              </th>
-              <th className="text-start pr-2 sm:pr-1 text-black text-[12px] sm:text-[14px] font-bold whitespace-nowrap">
+              </th> */}
+              <th className="px-4 py-2 text-start pr-2 sm:pr-1 text-black text-[12px] sm:text-[14px] font-bold whitespace-nowrap">
                 Account #
               </th>
               <th className="text-start pr-2 sm:pr-1 text-black text-[12px] sm:text-[14px] font-bold ">
@@ -81,16 +81,19 @@ const Accounts = () => {
             </tr>
           </thead>
           <tbody>
-            <AccountTableRow
-              accountNumber="110001"
-              city="San Francisco"
-              state="CA"
-              utility="PG&E"
-              date="02/11/24"
-              folderName="Mcdonalds"
-            />
-
-            
+            {
+              retrieval.selectedFolder.name !== "" && retrieval.accounts.map((account: AuthorizedAccount) => (
+                <AccountTableRow
+                  key={account.accountNumber}
+                  accountNumber={account.accountNumber}
+                  city={account.city}
+                  state={account.state}
+                  utility={account.utility}
+                  date={account.date}
+                  folderName={retrieval.selectedFolder.name}
+                />
+              ))
+            }
           </tbody>
         </table>
       </div>

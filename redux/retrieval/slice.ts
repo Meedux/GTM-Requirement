@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RetrievalType } from './types';
-import { AccountQueue, Folder } from '../util_types';
+import { AccountQueue, AuthorizedAccount, Folder } from '../util_types';
 
 const initialState: RetrievalType = {
     folders: [],
     accountQueue: [],
+    accounts: [],
     selectedFolder: {
         name: '',
         lastModified: '',
@@ -19,6 +20,9 @@ const retrievalSlice = createSlice({
         setFolders: (state, action: PayloadAction<Folder[]>) => {
             state.folders = action.payload;
         },
+        setAccounts: (state, action: PayloadAction<AuthorizedAccount[]>) => {
+            state.accounts = action.payload;
+        },
         setAccountQueue: (state, action: PayloadAction<AccountQueue[]>) => {
             state.accountQueue = action.payload;
         },
@@ -31,5 +35,5 @@ const retrievalSlice = createSlice({
     },
 });
 
-export const { setFolders, setAccountQueue, setIsLoading, setSelectedFolder } = retrievalSlice.actions;
+export const { setFolders, setAccountQueue, setIsLoading, setSelectedFolder, setAccounts } = retrievalSlice.actions;
 export default retrievalSlice.reducer;

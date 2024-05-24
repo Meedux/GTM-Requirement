@@ -6,6 +6,7 @@ import RetrievalAccountTableRow from "../TableRow/RetrievalAccountTableRow";
 import { usePathname } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { AccountQueue } from "@/redux/util_types";
+import { sendAuthorization } from "@/redux/retrieval/thunks";
 
 const AccountsTable = () => {
   const url = usePathname();
@@ -94,7 +95,10 @@ const AccountsTable = () => {
 
       {url === "/retrieval" && (
         <div className="text-center w-[100%] lg:w-[110%] mt-4">
-          <button className="bg-[#006FEE] mb-1 px-6 py-1 text-white text-center rounded-lg shadow-lg font-joseph-sans text-xs md:text-base">
+          <button 
+            className="bg-[#006FEE] mb-1 px-6 py-1 text-white text-center rounded-lg shadow-lg font-joseph-sans text-xs md:text-base"
+            onClick={e => dispatch(sendAuthorization())}
+          >
             Retrieve
           </button>
         </div>

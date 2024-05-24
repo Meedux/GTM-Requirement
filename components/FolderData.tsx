@@ -24,7 +24,6 @@ const FolderData = () => {
 
   useEffect(() => {
     setFolders(retrieval.folders);
-    console.log(retrieval.folders)
   }, [retrieval.folders]);
 
   return (

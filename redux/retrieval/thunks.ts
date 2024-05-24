@@ -1,12 +1,13 @@
 import {
     setAccountQueue,
+    setAccounts,
     setFolders,
     setIsLoading,
     setSelectedFolder,
 } from "./slice";
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { Folder, AccountQueue } from "../util_types";
+import { Folder, AccountQueue, AuthorizedAccount } from "../util_types";
 import { RootState } from "../main";
 
 
@@ -26,6 +27,13 @@ export const fetchFolders = createAsyncThunk(
       // Fetch folders here and assign it to the `folders` variable
       dispatch(setFolders(folders));
       dispatch(setIsLoading(false));
+    }
+);
+
+export const sendAuthorization = createAsyncThunk(
+    'retrieval/sendAuthorization',
+    async (_, { dispatch }) => {
+        dispatch(setAccountQueue([]));
     }
 );
 
@@ -53,9 +61,13 @@ export const addAccountToQueue = createAsyncThunk(
     }
 );
 
+
 export const selectFolder = createAsyncThunk(
     'retrieval/selectFolder',
-    async (folder: Folder, { dispatch, getState }) => {
+    async ({folder, accountType}: {
+        folder: Folder,
+        accountType: string
+    }, { dispatch, getState }) => {
         const retrieval = (getState() as RootState).retrieval;
 
         if(retrieval.selectedFolder.name === folder.name) {
@@ -78,17 +90,30 @@ export const selectFolder = createAsyncThunk(
         const accounts = await response.json();
         console.log(accounts);
 
-
-        const acc: AccountQueue[] = []
+        if(accountType === 'queue') {
+            const acc: AccountQueue[] = []
         
-        accounts.forEach((account: AccountQueue) => {
-            if (account.folder === folder.name) {
-                acc.push(account)
-            }
-        })
+            accounts.forEach((account: AccountQueue) => {
+                if (account.folder === folder.name) {
+                    acc.push(account)
+                }
+            })
 
-        dispatch(setIsLoading(false))
-        dispatch(setAccountQueue(acc))
+            dispatch(setIsLoading(false))
+            dispatch(setAccountQueue(acc))
+        }else if(accountType == "authorized"){
+            const acc: AuthorizedAccount[] = []
+        
+            accounts.forEach((account: AuthorizedAccount) => {
+                if (account.folder === folder.name) {
+                    acc.push(account)
+                }
+            })
+
+            dispatch(setIsLoading(false))
+            dispatch(setAccounts(acc))
+        }
+        
     }
 );
 

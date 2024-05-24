@@ -3,6 +3,7 @@
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { selectFolder } from "@/redux/retrieval/thunks";
 import { Folder } from "@/redux/util_types";
+import { usePathname } from "next/navigation";
 import React from "react";
 import { FaRegTrashAlt, FaRegFolder } from "react-icons/fa";
 
@@ -11,12 +12,15 @@ const FolderTableRow = ({
 }: {
   folder: Folder;
 }) => {
+
+  const url = usePathname();
   const [onItemHover, setOnItemHover] = React.useState(false);
   const dispatch = useAppDispatch();
   const retrieval = useAppSelector((state) => state.retrieval);
 
   const selectFolderData = () => {
-    dispatch(selectFolder(folder));
+    const accountType: string = url === "/retrieval" ? "retrieval" : url === "/home" ? "authorized" : "";
+    dispatch(selectFolder({ folder, accountType }));
   };
 
   return (
