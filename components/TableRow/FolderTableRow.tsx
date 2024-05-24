@@ -19,7 +19,8 @@ const FolderTableRow = ({
   const retrieval = useAppSelector((state) => state.retrieval);
 
   const selectFolderData = () => {
-    const accountType: string = url === "/retrieval" ? "retrieval" : url === "/home" ? "authorized" : "";
+    console.log(url)
+    const accountType: string = url === "/retrieval" ? "queue" : url === "/home" ? "authorized" : "";
     dispatch(selectFolder({ folder, accountType }));
   };
 
