@@ -12,9 +12,10 @@ const Authorization = () => {
   const [utility, setUtility] = useState("");
   const [utilityUserName, setUtilityUserName] = useState("");
   const [utilityPassword, setUtilityPassword] = useState("");
+  const [authorized, setAuthorized] = useState(false);
 
   const authorize = async () => {
-    
+
   }
 
   return (
@@ -33,9 +34,7 @@ const Authorization = () => {
           setUtilityPassword={setUtilityPassword}
         />
       )}
-      {/* {formState === "verify" && <VerifyEmail setFormState={setFormState} />} */}
-      {formState === "procesing" && <Processing setFormState={setFormState} />}
-      {formState === "success" && <Success />}
+      {formState === "processing" && <Processing setFormState={setFormState} />}
     </>
   );
 };

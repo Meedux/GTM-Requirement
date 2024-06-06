@@ -13,8 +13,8 @@ return (
         {/* Terms and Conditions Card with white Background */}
         <div className="bg-white p-2 md:w-[50%] h-[70%] flex flex-col justify-center items-center rounded-md shadow-2xl">
             <h1 className="text-black font-joseph-sans text-center text-4xl mb-4 font-bold">Authorizing</h1>
-
             <p className="text-black font-joseph-sans text-center text-2xl mb-4">Please wait for confirmation...</p>
+            <span className="loading loading-bars loading-lg text-[#337AB7]"></span>
 
             {/* <p className="text-green-500 font-joseph-sans text-center text-2xl mb-4">Success!</p> */}
         </div>

@@ -20,11 +20,6 @@ const UtilityProvider = ({
         className="p-2 rounded-md w-[40%] h-[3rem] text-black font-joseph-sans bg-[#E7F1FE] mb-[1rem]"
         placeholder="Email"
       />
-      <input
-        type="text"
-        className="p-2 rounded-md w-[40%] h-[3rem] text-black font-joseph-sans bg-[#E7F1FE] mb-[1rem]"
-        placeholder="Search"
-      />
       <div className="text-end">
         <span className="text-white font-joseph-sans cursor-pointer text-sm">
           Cant Find Your Utility Company?

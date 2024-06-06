@@ -36,9 +36,9 @@ const SignInForm = ({
       />
 
       {/* Sign In Card with white Background */}
-      <div className="bg-white p-5 w-[50rem] flex flex-col justify-center items-center rounded-md shadow-2xl">
+      <div className="bg-white p-5 md:w-[50rem] flex flex-col justify-center items-center rounded-md shadow-2xl">
         {/* <Image src={'/PG&E.svg'} width={100} height={100} alt='PG&E Logo' className='mt-5 mb-9 '/> */}
-        <h1 className="text-black font-joseph-sans text-4xl mb-4 font-bold">
+        <h1 className="text-black font-joseph-sans text-xl md:text-4xl mb-4 font-bold">
           Authorize Account
         </h1>
 
@@ -47,8 +47,8 @@ const SignInForm = ({
           <div className="text-red-500 p-2 font-joseph-sans">{error}</div>
         )}
         <div className="mb-7 w-full flex justify-center items-center flex-col">
-          <div className="flex justify-between items-center mx-3 w-[70%] mb-[1rem]">
-            <p className="text-black font-bold">Customer Email</p>
+          <div className="flex justify-between items-center mx-3 w-[90%] md:w-[70%] mb-[1rem]">
+            <p className="text-black font-bold text-xs md:text-base">Customer Email</p>
             <input
               type="text"
               className="p-2 rounded-md w-[70%] h-[3rem] text-black font-joseph-sans bg-[#E7F1FE]"
@@ -57,8 +57,8 @@ const SignInForm = ({
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="flex justify-between items-center mx-3 w-[70%] mb-[1rem]">
-            <p className="text-black font-bold">Select Your Utility</p>
+          <div className="flex justify-between items-center mx-3 w-[90%] md:w-[70%] mb-[1rem]">
+            <p className="text-black font-bold text-xs md:text-base">Select Your Utility</p>
             <select 
               className="select p-2 rounded-md w-[70%] h-[3rem] text-black font-joseph-sans bg-[#E7F1FE]"
               value={utility}
@@ -77,8 +77,8 @@ const SignInForm = ({
         {
           utility != "" && (
             <div className="mb-4 w-full flex justify-center items-center flex-col">
-              <div className="flex justify-between items-center mx-3 w-[70%] mb-[1rem]">
-                <p className="text-black font-bold">{utility} Username</p>
+              <div className="flex justify-between items-center mx-3 w-[90%] md:w-[70%] mb-[1rem]">
+                <p className="text-black text-xs md:text-base font-bold">{utility} Username</p>
                 <input
                   type="text"
                   className="p-2 rounded-md w-[70%] h-[3rem] text-black font-joseph-sans bg-[#E7F1FE] input"
@@ -87,8 +87,8 @@ const SignInForm = ({
                   onChange={(e) => setUtilityUserName(e.target.value)}
                 />
               </div>
-              <div className="flex justify-between items-center mx-3 w-[70%] mb-[1rem]">
-                <p className="text-black font-bold">{utility} Password</p>
+              <div className="flex justify-between items-center mx-3 w-[90%] md:w-[70%] mb-[1rem]">
+                <p className="text-black text-xs md:text-base font-bold">{utility} Password</p>
                 <input
                   type="password"
                   className="p-2 rounded-md w-[80%] h-[3rem] text-black font-joseph-sans bg-[#E7F1FE] input"
@@ -101,36 +101,36 @@ const SignInForm = ({
           )
         }
 
-        <div className="mb-3 w-[60%] flex justify-center items-center flex-col">
-          <p className="text-black font-joseph-sans ">
+        <div className="mb-3 w-[90%] md:w-[60%] flex justify-center items-center flex-col">
+          <p className="text-black font-joseph-sans text-xs md:text-base">
             {
               "I am the owner of the utility account(s) above, and in accordance with Chora’s Terms of Service and Privacy Policies, I authorize Chora Inc. to:"
             }
           </p>
         </div>
 
-        <div className="mb-7 w-[60%] flex justify-center  flex-col">
+        <div className="mb-7 w-[90%] md:w-[60%] flex justify-center  flex-col">
           <div className="flex items-center mb-2">
-            <input type="checkbox" id="checkbox1" className="mr-2 checkbox" />
-            <label htmlFor="checkbox1" className="text-black font-joseph-sans">
+            <input type="checkbox" id="checkbox1" className="mr-2 checkbox  border-black" />
+            <label htmlFor="checkbox1" className="text-black font-joseph-sans text-xs md:text-base">
               Login to above accounts on my behalf
             </label>
           </div>
           <div className="flex items-center mb-2">
-            <input type="checkbox" id="checkbox2" className="mr-2 checkbox" />
-            <label htmlFor="checkbox2" className="text-black font-joseph-sans">
+            <input type="checkbox" id="checkbox2" className="mr-2 checkbox  border-black" />
+            <label htmlFor="checkbox2" className="text-black font-joseph-sans text-xs md:text-base">
               Collect all account data
             </label>
           </div>
           <div className="flex items-center mb-2">
-            <input type="checkbox" id="checkbox3" className="mr-2 checkbox" />
-            <label htmlFor="checkbox3" className="text-black font-joseph-sans">
+            <input type="checkbox" id="checkbox3" className="mr-2 checkbox  border-black" />
+            <label htmlFor="checkbox3" className="text-black font-joseph-sans text-xs md:text-base">
               Authorize and share data on my behalf
             </label>
           </div>
         </div>
 
-        <button className="bg-black text-white w-[80%] h-[3rem] rounded-md mb-5">
+        <button className="bg-black text-xs md:text-base text-white w-[70%] md:w-[40%] h-[3rem] rounded-md mb-5" onClick={e => setFormState("processing")}>
           AUTHORIZE {utility} ACCOUNT
         </button>
       </div>
