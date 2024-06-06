@@ -16,8 +16,13 @@ const UtilityProvider = ({
         Search and select your utility provider below
       </p>
       <input
+        type="email"
+        className="p-2 rounded-md w-[40%] h-[3rem] text-black font-joseph-sans bg-[#E7F1FE] mb-[1rem]"
+        placeholder="Email"
+      />
+      <input
         type="text"
-        className="p-2 rounded-md w-[50%] h-[3rem] text-black font-joseph-sans bg-[#E7F1FE] mb-[1rem]"
+        className="p-2 rounded-md w-[40%] h-[3rem] text-black font-joseph-sans bg-[#E7F1FE] mb-[1rem]"
         placeholder="Search"
       />
       <div className="text-end">
@@ -27,7 +32,7 @@ const UtilityProvider = ({
       </div>
 
       <div className="flex flex-col items-end mt-5">
-        <button className="bg-black text-white px-4 py-2 rounded-md" onClick={e => setFormState("signin")}>
+        <button className="bg-black text-white px-4 py-2 rounded-md" onClick={e => setFormState("authorize")}>
           Continue {"->"}
         </button>
       </div>
