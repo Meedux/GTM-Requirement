@@ -3,7 +3,13 @@ import { useRouter } from 'next/navigation';
 import { AuthContext } from '@/util/AuthContext';
 import Image from "next/image";
 
-const Success = () => {
+const Success = ({
+  code,
+  setCode,
+} : {
+  code: string | null,
+  setCode: React.Dispatch<React.SetStateAction<string | null>>
+}) => {
     const router = useRouter();
     const { set } = useContext(AuthContext);
     useEffect(() => {

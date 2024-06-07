@@ -11,6 +11,8 @@ const SignInForm = ({
   setUtilityUserName,
   utilityPassword,
   setUtilityPassword,
+  email,
+  setEmail,
 }: {
   setFormState: React.Dispatch<React.SetStateAction<string>>;
   setUtility: React.Dispatch<React.SetStateAction<string>>;
@@ -19,9 +21,9 @@ const SignInForm = ({
   setUtilityUserName: React.Dispatch<React.SetStateAction<string>>;
   utilityPassword: string;
   setUtilityPassword: React.Dispatch<React.SetStateAction<string>>;
+  email: string;
+  setEmail: React.Dispatch<React.SetStateAction<string>>;
 }) => {
-  const [email, setEmail] = React.useState<string>("");
-  const [password, setPassword] = React.useState<string>("");
 
   const [error, setError] = React.useState<string>("");
   const [isError, setIsError] = React.useState<boolean>(false);
@@ -75,7 +77,7 @@ const SignInForm = ({
         </div>
         
         {
-          utility != "" && (
+          utility != "" && utility != "PG&E" && (
             <div className="mb-4 w-full flex justify-center items-center flex-col">
               <div className="flex justify-between items-center mx-3 w-[90%] md:w-[70%] mb-[1rem]">
                 <p className="text-black text-xs md:text-base font-bold">{utility} Username</p>
