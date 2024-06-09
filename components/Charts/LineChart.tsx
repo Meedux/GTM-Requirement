@@ -40,7 +40,7 @@ const LineChart = () => {
     };
   }, []);
   return (
-    <div className="relative md:block flex justify-center items-center md:h-[100%] md:w-[100%] h-[50vh] w-[80vw]">
+    <div className="relative md:block flex justify-center items-center h-[100%] w-[100%]">
         <canvas id='chart'></canvas>
     </div>
   )

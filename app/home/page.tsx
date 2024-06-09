@@ -1,6 +1,7 @@
 import AccountData from "@/components/AccountData";
 import Accounts from "@/components/Accounts";
 import FolderData from "@/components/FolderData";
+import LineCard from "@/components/LineCard";
 import React from "react";
 
 const page = () => {
@@ -13,7 +14,7 @@ const page = () => {
             <AccountData />
 
             {/* Second Row */}
-            <FolderData />
+            <LineCard />
           </div>
           <Accounts />
         </div>
