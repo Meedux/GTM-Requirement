@@ -19,7 +19,7 @@ const QueueFormInput = ({
     <>
         <input
             type="text"
-            className={`p-2 text-black rounded-md ${width} h-[3rem] bg-[#E7F1FE] mb-[${mb}] ${className}`}
+            className={`input p-2 text-black rounded-md ${width} h-[3rem] bg-[#E7F1FE] mb-[${mb}] ${className}`}
             placeholder={`${placeholder}`}
             value={value}
             onChange={(e) => setValue(e.target.value)}

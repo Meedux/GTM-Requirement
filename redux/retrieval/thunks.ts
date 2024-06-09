@@ -46,6 +46,34 @@ export const sendAuthorization = createAsyncThunk(
     }
 );
 
+export const getQueuedAccounts = createAsyncThunk(
+    'retrieval/getQueuedAccounts',
+    async (_, { dispatch, getState }) => {
+        const retrieval = (getState() as RootState).retrieval;
+        try{
+            const response = await fetch('http://127.0.0.1:8000/accounts/queued', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            const data: AccountQueue[] = await response.json();
+            const acc: AccountQueue[] = []
+
+            data.forEach((account: AccountQueue) => {
+                if (account.folder === retrieval.selectedFolder.id) {
+                    acc.push(account)
+                }
+            })
+
+            dispatch(setAccountQueue(acc));
+        }catch(e: any){
+            console.error(e);
+        }
+    }
+);
+
 export const addAccountToQueue = createAsyncThunk(
     'retrieval/addAccountToQueue',
     async (account: AccountQueue, { dispatch, getState }) => {
@@ -56,7 +84,7 @@ export const addAccountToQueue = createAsyncThunk(
             account
         ]
 
-        const res = await fetch('http://127.0.0.1:8000/api/customer/create', {
+        const res = await fetch('http://127.0.0.1:8000/retrieve', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -88,40 +116,8 @@ export const selectFolder = createAsyncThunk(
         dispatch(setSelectedFolder(folder));
         // Use the retrieval state as needed
         dispatch(setIsLoading(true))
-
-        // fetch the data from localhost:8000/api/customer
-        const response = await fetch('http://127.0.0.1:8000/api/customer', {
-            method: 'GET',
-            headers: {
-            'Content-Type': 'application/json'
-            }
-        });
-        const accounts = await response.json();
-        console.log(accounts);
-
-        if(accountType === 'queue') {
-            const acc: AccountQueue[] = []
-        
-            accounts.forEach((account: AccountQueue) => {
-                if (account.folder === folder.name) {
-                    acc.push(account)
-                }
-            })
-
-            dispatch(setIsLoading(false))
-            dispatch(setAccountQueue(acc))
-        }else if(accountType == "authorized"){
-            const acc: AuthorizedAccount[] = []
-        
-            accounts.forEach((account: AuthorizedAccount) => {
-                if (account.folder === folder.name) {
-                    acc.push(account)
-                }
-            })
-
-            dispatch(setIsLoading(false))
-            dispatch(setAccounts(acc))
-        }
+        dispatch(getQueuedAccounts());
+        dispatch(setIsLoading(false))
         
     }
 );

@@ -9,6 +9,7 @@ export interface AccountQueue {
     firstName: string
     email: string
     folder: string
+    phone: string
 }
 
 
