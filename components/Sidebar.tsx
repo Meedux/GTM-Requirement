@@ -57,13 +57,7 @@ const Sidebar = () => {
         <div
           className={`h-[70%] w-[20rem] flex flex-col justify-between items-center`}
         >
-          <Image
-            src={"/CHORA.svg"}
-            className="mb-7"
-            width={200}
-            height={200}
-            alt="Chora Logo"
-          />
+          
 
           <Button name="HOME" url="/home" />
 

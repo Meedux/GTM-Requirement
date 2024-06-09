@@ -97,16 +97,6 @@ const Accounts = () => {
           </tbody>
         </table>
       </div>
-
-      {url === "/retrieval" && (
-        <div className="text-center w-[100%] lg:w-[110%] mt-4">
-          <button className="bg-[#006FEE] mb-1 px-4 py-2 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-[12px] md:text-base">
-            Retrieve
-          </button>
-        </div>
-      )}
-
-      
     </div>
   );
 };

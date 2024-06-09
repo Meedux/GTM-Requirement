@@ -17,9 +17,11 @@ function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="bg-white">
         <Providers>
-          {children}
+          <div className="bg-white">
+            {children}
+          </div>
         </Providers>
       </body>
     </html>

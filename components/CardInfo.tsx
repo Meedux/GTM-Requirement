@@ -5,11 +5,6 @@ const CardInfo = () => {
     return (
         <>
           <div className="">
-            <div className="flex justify-end mb-1">
-              <button className="bg-black text-white px-2 py-1 rounded-md shadow-lg font-joseph-sans text-[10px] md:text-base">
-                Select Billing Period
-              </button>
-            </div>
             <div className="border border-gray-300 rounded-md shadow-lg card h-[98%] md:h-[95%] p-3 w-full ">
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="flex flex-col">

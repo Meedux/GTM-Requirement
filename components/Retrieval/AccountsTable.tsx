@@ -14,7 +14,7 @@ const AccountsTable = () => {
   const dispatch = useAppDispatch();
   return (
     <div className="mt-[3rem] md:mt-0">
-        <div className="flex w-full justify-end w-[100%] lg:w-[110%]">
+        <div className="flex justify-end w-[100%] lg:w-[110%]">
           <button className="bg-black mb-1 px-4 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs md:text-base">
             Delete
           </button>
@@ -23,8 +23,8 @@ const AccountsTable = () => {
         <table className="w-full">
           <thead>
             <tr className="border-b border-gray-300 bg-[#F4F4F5]">
-              <th className="px-4 py-2">
-                <input type="checkbox" />
+              <th className="px-4 py-5">
+                <input type="checkbox" className="hidden" />
               </th>
               <th className="text-start whitespace-nowrap pr-2 sm:pr-1 text-black text-[10px] sm:text-[12px] font-bold">
                 Last Name
