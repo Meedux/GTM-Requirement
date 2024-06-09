@@ -27,7 +27,7 @@ const FolderTableRow = ({
   return (
     <>
       <tr>
-        <td className="px-2 py-2 text-black font-joseph-sans text-[12px] sm:text-base ">
+        <td className="px-4 py-2 text-black font-joseph-sans text-[12px] sm:text-base ">
           <div className={`flex font-joseph-sans cursor-pointer ${retrieval.selectedFolder.name == folder.name ? "text-[#00A2FF]" : ""} whitespace-nowrap`} onClick={e => selectFolderData()}>
             <FaRegFolder size={20} className={`text-center ${retrieval.selectedFolder.name == folder.name ? "text-[#00A2FF]" : "text-black"} mr-2`} />
             {folder.name}

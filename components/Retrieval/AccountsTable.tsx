@@ -13,26 +13,16 @@ const AccountsTable = () => {
   const retrieval = useAppSelector((state) => state.retrieval);
   const dispatch = useAppDispatch();
   return (
-    <div className="mt-7 md:mt-0">
-      <div
-        className={`flex flex-row ${
-          url === "/retrieval" ? "justify-end" : "justify-between"
-        } items-center w-[100%] mt-1 lg:-mt-[1.7rem]  lg:w-[110%]`}
-      >
-        <div className="">
-          <div className="flex w-full">
-            <div className="flex justify-end">
-              <button className="bg-black mb-1 px-4 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs md:text-base">
-                Delete
-              </button>
-            </div>
-          </div>
+    <div className="mt-[3rem] md:mt-0">
+        <div className="flex w-full justify-end w-[100%] lg:w-[110%]">
+          <button className="bg-black mb-1 px-4 py-1 text-white text-center p-2 rounded-md shadow-lg font-joseph-sans text-xs md:text-base">
+            Delete
+          </button>
         </div>
-      </div>
       <div className="border border-gray-300 rounded-md shadow-lg w-[100%] lg:w-[110%] card h-[96.5%] overflow-auto">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-gray-300">
+            <tr className="border-b border-gray-300 bg-[#F4F4F5]">
               <th className="px-4 py-2">
                 <input type="checkbox" />
               </th>
