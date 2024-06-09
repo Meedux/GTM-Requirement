@@ -7,6 +7,7 @@ const initialState: RetrievalType = {
     accountQueue: [],
     accounts: [],
     selectedFolder: {
+        id: '',
         name: '',
         lastModified: '',
     },

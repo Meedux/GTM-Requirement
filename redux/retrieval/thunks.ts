@@ -11,21 +11,30 @@ import { Folder, AccountQueue, AuthorizedAccount } from "../util_types";
 import { RootState } from "../main";
 
 
-// Global Variables used for dummy data
-const folders: Folder[] = [
-    { name: "Folder 1", lastModified: "2021-01-01" },
-    { name: "Folder 2", lastModified: "2021-01-01" },
-    { name: "Folder 3", lastModified: "2021-01-01" },
-];
-
 
 
 export const fetchFolders = createAsyncThunk(
     'retrieval/fetchFolders',
-    async (_, { dispatch }) => {
+    async (_, { dispatch, getState }) => {
+      const user = (getState() as RootState).user;
       dispatch(setIsLoading(true));
-      // Fetch folders here and assign it to the `folders` variable
-      dispatch(setFolders(folders));
+
+      try{
+        if(user.username === "") throw new Error("User not logged in");
+        const response = await fetch('http://127.0.0.1:8000/folder', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username: user.username }),
+        });
+
+        const data: Folder[] = await response.json();
+        dispatch(setFolders(data));
+      }catch(e: any){
+        console.error(e);
+      }
+
       dispatch(setIsLoading(false));
     }
 );
@@ -71,7 +80,7 @@ export const selectFolder = createAsyncThunk(
         const retrieval = (getState() as RootState).retrieval;
 
         if(retrieval.selectedFolder.name === folder.name) {
-            dispatch(setSelectedFolder({ name: '', lastModified: '' }));
+            dispatch(setSelectedFolder({ name: '', lastModified: '', id: ''}));
             dispatch(setAccountQueue([]))
             console.log(retrieval.selectedFolder)
             return;

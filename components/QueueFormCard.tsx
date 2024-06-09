@@ -9,28 +9,18 @@ const QueueFormCard = () => {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
-  const [city, setCity] = useState<string>("");
-  const [state, setState] = useState<string>("");
-  const [utility, setUtility] = useState<string>("");
-  const [zip, setZip] = useState<string>("");
 
   const addAccount = () => {
     if(retrieval.selectedFolder.name === "") {
       alert("Please select a folder first");
       return;
     }
-
     
     dispatch(
       addAccountToQueue({
         firstName,
         lastName,
         email,
-        city,
-        state,
-        utility,
-        zip,
-        date: new Date().toISOString().split('T')[0],
         folder: retrieval.selectedFolder.name,
       })
     );
@@ -38,10 +28,6 @@ const QueueFormCard = () => {
     setFirstName("");
     setLastName("");
     setEmail("");
-    setCity("");
-    setState("");
-    setUtility("");
-    setZip("");
   }
 
   return (
@@ -63,24 +49,6 @@ const QueueFormCard = () => {
               setValue={setEmail}
             />
 
-            <div className="mb-7">
-              <QueueFormInput
-                placeholder="City (Optional)"
-                width="w-[40%]"
-                className="mr-3 font-joseph-sans"
-                value={city}
-                setValue={setCity}
-              />
-
-              <QueueFormInput
-                placeholder="State (Optional)"
-                width="w-1/2"
-                className="font-joseph-sans"
-                value={state}
-                setValue={setState}
-              />
-            </div>
-
             <QueueFormInput
               placeholder="File Name"
               className="font-joseph-sans"
@@ -92,20 +60,6 @@ const QueueFormCard = () => {
               className="font-joseph-sans"
               value={lastName}
               setValue={setLastName}
-            />
-
-            <QueueFormInput
-              placeholder="Utility Provider (Optional)"
-              className="font-joseph-sans"
-              value={utility}
-              setValue={setUtility}
-            />
-
-            <QueueFormInput
-              placeholder="Zip Code (Optional)"
-              className="font-joseph-sans mb-[3rem]"
-              value={zip}
-              setValue={setZip}
             />
 
             <div className="flex items-center">
@@ -127,7 +81,7 @@ const QueueFormCard = () => {
             className="bg-black text-white px-2 py-1 rounded-md text-[12px] md:text-base shadow-md font-joseph-sans"
             onClick={e => addAccount()}
           >
-            Add to Queue
+            Retrieve
           </button>
         </div>
       </div>

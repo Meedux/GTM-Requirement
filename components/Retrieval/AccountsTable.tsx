@@ -82,10 +82,6 @@ const AccountsTable = () => {
                 key={account.lastName}
                 LastName={account.lastName}
                 FirstName={account.firstName}
-                city={account.city}
-                state={account.state}
-                utility={account.utility}
-                date={account.date}
                 folderName={retrieval.selectedFolder.name}
               />
             ))}

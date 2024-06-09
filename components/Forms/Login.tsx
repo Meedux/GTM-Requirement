@@ -3,6 +3,8 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { AuthenticationDetails, CognitoUser } from "amazon-cognito-identity-js";
 import { userPool } from "@/util/UserPool";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { setUsername } from "@/redux/chora/slice";
 
 const Login = ({
   setFormState,
@@ -10,6 +12,9 @@ const Login = ({
   setFormState: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   const router = useRouter();
+
+  const dispatch = useAppDispatch();
+  const user = useAppSelector((state) => state.user);
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -62,7 +67,11 @@ const Login = ({
 
     cognitoUser.authenticateUser(authenticationDetails, {
       onSuccess: (result) => {
-        console.log("onSuccess:", result);
+        console.log("onSuccess:", result.getIdToken().payload['cognito:username']);
+
+        // store the username code to the redux store
+        dispatch(setUsername(result.getIdToken().payload['cognito:username']));
+
         router.push("/home");
       },
       onFailure: (err) => {

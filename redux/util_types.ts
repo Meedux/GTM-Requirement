@@ -1,9 +1,18 @@
 export interface Folder {
+    id: string,
     name: string,
     lastModified: string,
 }
 
 export interface AccountQueue {
+    lastName: string
+    firstName: string
+    email: string
+    folder: string
+}
+
+
+export interface Account {
     lastName: string
     firstName: string
     email: string
@@ -14,7 +23,6 @@ export interface AccountQueue {
     zip: string
     folder: string
 }
-
 
 export interface AuthorizedAccount {
     accountNumber: string
