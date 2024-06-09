@@ -21,15 +21,15 @@ return (
         </div>
 
         <div className="justify-self-center -ml-20 col-span-4">
-            <Link href={"/retrieval"}>
-                <button className={`p-2 rounded-md mr-3 ${url == "/retrieval" ? "bg-white shadow-md" : ""} text-[#71717A] text-xl font-joseph-sans`}>
-                    RETRIEVE
-                </button>
-            </Link>
-
             <Link href={"/home"}>
                 <button className={`p-2 rounded-md ${url == "/home" ? "bg-white shadow-md" : ""} text-[#71717A] text-xl font-joseph-sans`}>
                     ANALYZE
+                </button>
+            </Link>
+            
+            <Link href={"/retrieval"}>
+                <button className={`p-2 rounded-md mr-3 ${url == "/retrieval" ? "bg-white shadow-md" : ""} text-[#71717A] text-xl font-joseph-sans`}>
+                    RETRIEVE
                 </button>
             </Link>
         </div>
