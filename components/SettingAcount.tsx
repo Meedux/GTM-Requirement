@@ -12,7 +12,7 @@ const SettingAcount = () => {
   
     return (
       <div className="mt-7 md:mt-0">
-        <div className={`border border-gray-300 rounded-md shadow-lg w-[100%] lg:w-[110%] card ${url === "/home" ? "h-[96.5%]" : "h-[101.5%]"} overflow-auto`}>
+        <div className={`border border-gray-300 rounded-md shadow-lg w-[100%] lg:w-[110%] card h-[100%] overflow-auto`}>
           <table className="w-full table-auto">
             <thead>
               <tr className="border-b border-gray-300 bg-[#F4F4F5]">

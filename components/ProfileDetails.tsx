@@ -5,19 +5,21 @@ import React , { useState } from "react";
 const ProfileDetails = () => {
   const [details, setDetails] = useState("profile");
   return (
-    <div className="border border-gray-300 rounded-md shadow-lg card h-[100%]  w-full ">
-      <div className="flex px-[8rem] justify-between border-b border-gray-300 bg-[#F4F4F5] p-1">
-        <span className={`font-bold px-[3rem] py-1 ${details == "profile" ? "bg-white rounded-md shadow-lg" : ""} text-black font-joseph-sans cursor-pointer`} onClick={e => setDetails("profile")}>
-          Profile
-        </span>
+    <div className="border border-gray-300 rounded-md shadow-lg card h-[100%]">
+      <div className="w-full border-b border-gray-300 bg-[#F4F4F5] flex justify-center items-center">
+        <div className="flex justify-between p-1 md:w-[80%]">
+          <span className={`font-bold text-sm md:text-base px-[2rem] py-1 ${details == "profile" ? "bg-white rounded-md shadow-lg" : ""} text-black font-joseph-sans cursor-pointer`} onClick={e => setDetails("profile")}>
+            Profile
+          </span>
 
-        <span className={`font-bold px-[3rem] py-1 ${details == "admin" ? "bg-white rounded-md shadow-lg" : ""} text-black font-joseph-sans cursor-pointer`} onClick={e => setDetails("admin")}>
-          Admin
-        </span>
+          <span className={`font-bold text-sm md:text-base px-[2rem] py-1 ${details == "admin" ? "bg-white rounded-md shadow-lg" : ""} text-black font-joseph-sans cursor-pointer`} onClick={e => setDetails("admin")}>
+            Admin
+          </span>
 
-        <span className={`font-bold px-[3rem] py-1 ${details == "notifications" ? "bg-white rounded-md shadow-lg" : ""} text-black font-joseph-sans cursor-pointer`} onClick={e => setDetails("notifications")}>
-          Notifications
-        </span>
+          <span className={`font-bold text-sm md:text-base px-[2rem] py-1 ${details == "notifications" ? "bg-white rounded-md shadow-lg" : ""} text-black font-joseph-sans cursor-pointer`} onClick={e => setDetails("notifications")}>
+            Notifications
+          </span>
+        </div>
       </div>
       <div className="grid grid-cols-2 gap-4 mb-4 p-3">
         <div className="flex flex-col">

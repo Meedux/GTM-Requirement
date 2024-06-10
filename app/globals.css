@@ -8,3 +8,8 @@
 .container {
   @apply mx-auto max-w-4xl px-4;
 }
+
+:root {
+  --font-sans: 'Josefin Sans', sans-serif;
+  background-color: white;
+}
