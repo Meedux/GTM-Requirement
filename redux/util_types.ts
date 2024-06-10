@@ -35,6 +35,5 @@ export interface AuthorizedAccount {
     state: string
     utility: string
     date: string
-    zip: string
     folder: string
 }

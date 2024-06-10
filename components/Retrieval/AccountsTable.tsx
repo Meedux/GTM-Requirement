@@ -32,7 +32,7 @@ const AccountsTable = () => {
             Delete
           </button>
         </div>
-      <div className="border border-gray-300 rounded-md shadow-lg w-[100%] lg:w-[110%] card h-[96.5%] overflow-auto">
+      <div className="border border-gray-300 rounded-md shadow-lg w-[100%] lg:w-[110%] card h-[96.5%] overflow-auto" suppressHydrationWarning={true}>
         <table className="w-full">
           <thead>
             <tr className="border-b border-gray-300 bg-[#F4F4F5]">
@@ -73,17 +73,6 @@ const AccountsTable = () => {
           </tbody>
         </table>
       </div>
-
-      {/* {url === "/retrieval" && (
-        <div className="text-center w-[100%] lg:w-[110%] mt-4">
-          <button 
-            className="bg-[#006FEE] mb-1 px-6 py-1 text-white text-center rounded-lg shadow-lg font-joseph-sans text-xs md:text-base"
-            onClick={e => dispatch(sendAuthorization())}
-          >
-            Retrieve
-          </button>
-        </div>
-      )} */}
     </div>
   );
 };

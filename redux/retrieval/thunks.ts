@@ -111,7 +111,7 @@ export const getAuthorizedAccounts = createAsyncThunk(
     'retrieval/getAuthorizedAccounts',
     async (_, { dispatch }) => {
         try{
-            const response = await fetch('http://127.0.0.1:8000/accounts/authorized', {
+            const response = await fetch('http://127.0.0.1:8000/account', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
