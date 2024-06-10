@@ -22,7 +22,8 @@ const QueueFormCard = () => {
       lastName,
       email,
       folder: retrieval.selectedFolder.id,
-      phone
+      phone,
+      isAuthorized: false,
     }
 
     try{
