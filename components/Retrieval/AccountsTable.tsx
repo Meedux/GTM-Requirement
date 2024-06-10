@@ -1,17 +1,30 @@
 "use client";
 
-import React from "react";
+import React, { use, useEffect, useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import RetrievalAccountTableRow from "../TableRow/RetrievalAccountTableRow";
 import { usePathname } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { AccountQueue } from "@/redux/util_types";
-import { sendAuthorization } from "@/redux/retrieval/thunks";
+import { getQueuedAccounts, sendAuthorization } from "@/redux/retrieval/thunks";
 
 const AccountsTable = () => {
   const url = usePathname();
   const retrieval = useAppSelector((state) => state.retrieval);
   const dispatch = useAppDispatch();
+
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setCount(retrieval.accountQueue.length);
+  }, [retrieval.accountQueue]);
+
+  useEffect(() => {
+    if(retrieval.selectedFolder.name !== "") {
+      Promise.resolve(dispatch(getQueuedAccounts()))
+    }
+  }, [retrieval.selectedFolder])
+
   return (
     <div className="mt-[3rem] md:mt-0">
         <div className="flex justify-end w-[100%] lg:w-[110%]">
@@ -42,7 +55,7 @@ const AccountsTable = () => {
                 Status
               </th>
               <th className="text-start whitespace-nowrap pr-2 sm:pr-1 text-black text-[10px] sm:text-[12px] font-bold ">
-                Count: {retrieval.accountQueue.length}
+                Count: {count}
               </th>
             </tr>
           </thead>
@@ -52,7 +65,9 @@ const AccountsTable = () => {
                 key={account.lastName}
                 LastName={account.lastName}
                 FirstName={account.firstName}
+                email={account.email}
                 folderName={retrieval.selectedFolder.name}
+                isAuthorized={account.isAuthorized}
               />
             ))}
           </tbody>

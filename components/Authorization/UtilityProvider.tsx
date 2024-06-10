@@ -3,8 +3,12 @@ import React from "react";
 
 const UtilityProvider = ({
   setFormState,
+  email,
+  setEmail,
 }: {
   setFormState: React.Dispatch<React.SetStateAction<string>>;
+  email: string;
+  setEmail: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   return (
     <div className="h-screen mx-[10%] flex flex-col justify-center items-end">
@@ -19,6 +23,8 @@ const UtilityProvider = ({
         type="email"
         className="p-2 rounded-md w-[40%] h-[3rem] text-black font-joseph-sans bg-[#E7F1FE] mb-[1rem]"
         placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
       />
       <div className="text-end">
         <span className="text-white font-joseph-sans cursor-pointer text-sm">

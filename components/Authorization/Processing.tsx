@@ -1,14 +1,17 @@
 import Image from 'next/image'
+import { redirect } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 const Processing = ({
     setFormState,
     code,
     utility,
+    email,
 }: {
     setFormState: React.Dispatch<React.SetStateAction<string>>
     code: string | null,
     utility: string,
+    email: string,
 }) => {
     const [message, setMessage] = useState('Please wait for confirmation...');
     const [success, setSuccess] = useState(false);
@@ -34,14 +37,33 @@ const Processing = ({
 
             // Register the User
 
-            // Change the Message to Success
-            setTimeout(() => {
-                setSuccess(true);
-            }, 3000);
+            (async () => {
+                try {
+                    const response = await fetch('http://127.0.0.1:8000/account/authorize', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            authToken: code,
+                            email: email,
+                        }),
+                    });
+
+                    if(response.status == 200){
+                        setSuccess(true);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            })();
         }
     }, [code]);
 
-    
+    const exit = () => {
+        localStorage.removeItem("email");
+        redirect("/login");
+    }
     
     
 return (
@@ -60,8 +82,8 @@ return (
                 ) : (
                     <>
                         <h1 className="text-black font-joseph-sans text-center text-4xl mb-4 font-bold">Success!</h1>
-                        <p className="text-black font-joseph-sans text-center mx-4 text-2xl mb-4">Your data was succesfully shared with your selected. A confirmation has been sent to your email</p>
-                        <button className="bg-black text-xs md:text-base text-white w-[70%] md:w-[40%] h-[3rem] rounded-md mb-5">
+                        <p className="text-black font-joseph-sans text-center mx-4 text-2xl mb-4">Your data was succesfully shared with your selected Utility. A confirmation has been sent to {email}</p>
+                        <button className="bg-black text-xs md:text-base text-white w-[70%] md:w-[40%] h-[3rem] rounded-md mb-5" onClick={e => exit()}>
                             Exit
                         </button>
                     </>

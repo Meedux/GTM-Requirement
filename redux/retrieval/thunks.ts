@@ -51,7 +51,7 @@ export const getQueuedAccounts = createAsyncThunk(
     async (_, { dispatch, getState }) => {
         const retrieval = (getState() as RootState).retrieval;
         try{
-            const response = await fetch('http://127.0.0.1:8000/accounts/queued', {
+            const response = await fetch('http://127.0.0.1:8000/accounts', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -95,6 +95,35 @@ export const addAccountToQueue = createAsyncThunk(
         console.log(results)
 
         dispatch(setAccountQueue(acc));
+    }
+);
+
+export const deleteAccountFromQueue = createAsyncThunk(
+    'retrieval/deleteAccountFromQueue',
+    async (account: AccountQueue, { dispatch, getState }) => {
+        const retrieval = (getState() as RootState).retrieval;
+        const acc: AccountQueue[] = retrieval.accountQueue.filter((acc) => acc.email !== account.email);
+        dispatch(setAccountQueue(acc));
+    }
+);
+
+export const getAuthorizedAccounts = createAsyncThunk(
+    'retrieval/getAuthorizedAccounts',
+    async (_, { dispatch }) => {
+        try{
+            const response = await fetch('http://127.0.0.1:8000/accounts/authorized', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            const data: AuthorizedAccount[] = await response.json();
+            dispatch(setAccounts(data));
+        }
+        catch(e: any){
+            console.error(e);
+        }
     }
 );
 

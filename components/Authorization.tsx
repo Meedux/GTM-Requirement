@@ -6,7 +6,7 @@ import SignInForm from "./Authorization/SignInForm";
 import Processing from "./Authorization/Processing";
 import Success from "./Authorization/Success";
 import VerifyEmail from "./Authorization/VerifyEmail";
-import { useSearchParams } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 import Callback from "./Authorization/Callback";
 
 const Authorization = () => {
@@ -22,13 +22,23 @@ const Authorization = () => {
     if (params.get("code")) {
       setFormState("processing");
       setCode(params.get("code"));
+      setEmail(localStorage.getItem("email") || "");
+    }else if(params.get("email")){
+      setEmail(atob(params.get("email") || ""));
+      localStorage.setItem("email", atob(params.get("email") || ""));
+    }else{
+      redirect("/login");
     }
   }, []);
 
   return (
     <>
       {formState === "utility" && (
-        <UtilityProvider setFormState={setFormState} />
+        <UtilityProvider 
+          setFormState={setFormState} 
+          email={email}
+          setEmail={setEmail}
+        />
       )}
       {formState === "authorize" && (
         <SignInForm
@@ -43,7 +53,12 @@ const Authorization = () => {
           setEmail={setEmail}
         />
       )}
-      {formState === "processing" && <Processing setFormState={setFormState} code={code} utility={utility} />}
+      {formState === "processing" && <Processing 
+          setFormState={setFormState} 
+          code={code} 
+          utility={utility} 
+          email={email}
+          />}
 
       {formState === "success" && <Success code={code} setCode={setCode} />}
     </>

@@ -10,6 +10,7 @@ export interface AccountQueue {
     email: string
     folder: string
     phone: string
+    isAuthorized: boolean
 }
 
 
